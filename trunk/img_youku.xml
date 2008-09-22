@@ -12,7 +12,7 @@ obj_mn_30.showWData = function(data){
 	var div = document.getElementById("mn_30");
 	var htmlCode='<iframe width="100%" height="165" allowTransparency="true" align="middle" scrolling="no" frameborder="0" src="http://www.mynon.cn/lt/img_youku/list_ykv.php"></iframe>';
 	if(data.u && data.t){
-		var htmlCode += '<div class="wd"><img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'" target="_blank">'+unescape(data.t)+'</a></div>';
+		htmlCode += '<div class="wd"><img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'" target="_blank">'+unescape(data.t)+'</a></div>';
 	}
 	div.innerHTML=htmlCode;
 }
