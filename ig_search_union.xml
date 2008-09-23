@@ -6,6 +6,7 @@
 <Content type="html">
 <![CDATA[
 <style type="text/css">
+div,form{font-size:12px;}
 .wd{padding:2px 0;font-size:12px;}
 </style>
 <script type="text/javascript">
@@ -39,6 +40,30 @@ $GB2312.fromUnicode = function(uchar){
 	return "";
 
 };
+
+$GB2312.encodeURIComponent = function(str){
+
+	var sExclude = "~!()'";
+	var result = "";
+
+	for(i=0;i<str.length;i++){
+
+		var chr = str.charAt(i);
+
+		if(chr == " "){
+			result += "+";
+		}else if(sExclude.indexOf(chr) > -1){
+			result += chr;
+		}else{
+			result += $GB2312.fromUnicode(chr);
+		}
+
+	}
+
+	return result.toUpperCase();
+
+};
+
 var searchSubmit = function(objForm){
 	var key = objForm.keyword.value;
 	key = $GB2312.encodeURIComponent(key);
