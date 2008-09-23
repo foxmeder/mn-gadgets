@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="多功能搜索" description="集合几款主要搜索引擎的综合搜索工具" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="270" scaling="false">
+<ModulePrefs title="多功能搜索" description="集合几款主要搜索引擎的综合搜索工具" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="80" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
@@ -106,7 +106,7 @@ function initWData() {
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
-<img src="../images/search.gif" style="float:left"/>
+<img src="http://www.mynon.cn/images/search.gif" style="float:left"/>
 <form name="searchform" action="javascript:void(0);" onsubmit="return searchSubmit(this);">
 <input name="keyword" type="text" style="width: 55%" />
 <input name="submit" type="submit" value="搜 索" /><br />
