@@ -36,7 +36,7 @@ function objItem(item){
 	this.title=item.getElementsByTagName("title")[0].firstChild.nodeValue;
 	this.url=item.getElementsByTagName("link")[0].firstChild.nodeValue;
 	if (item.getElementsByTagName("description")[0].firstChild){
-		this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue.replace(/[\n\r]/ig,"").substr(0,3);
+		this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue.replace(/[\n\r]/ig,"");
 	}else{
 		this.desc='';
 	}
@@ -89,7 +89,7 @@ function showcontent(offset){
 	}else{
 		html+='<div class="rich_list">';
 		for (i=offset;(i<_dataArray.length) && (i<offset+parseInt(widget.getValue("pagesize")));i++){
-			html+='<div class="item"><h3><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></h3><p class="description">加载中...</p></div>';
+			html+='<div class="item"><h3><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></h3><dic class="description">加载中...</div></div>';
 		}
 		html+='</div>';
 		con.setHTML(html);
