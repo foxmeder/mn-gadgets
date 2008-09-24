@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="每日学口语" description="每天学一句英语口语,鼠标放在喇叭图标上可以收听读音" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="440" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+.wd{padding:2px 0;font-size:12px;}
+</style>
+<script type="text/javascript">
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_261");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	var wid=261;
+	getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<iframe width="100%" height="420" allowTransparency="true" align="middle" scrolling="no" frameborder="0" src="http://8.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/112422617752071562289/calculator.xml"></iframe>
+<div id="mn_261" class="wd"></div>
+]]>
+</Content>
+</Module>
