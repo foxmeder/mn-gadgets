@@ -89,7 +89,7 @@ function showcontent(offset){
 	}else{
 		html+='<div class="rich_list">';
 		for (i=offset;(i<_dataArray.length) && (i<offset+parseInt(widget.getValue("pagesize")));i++){
-			html+='<div class="item"><h3><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></h3><dic class="description">加载中...</div></div>';
+			html+='<div class="item"><h3><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></h3><div class="description">加载中...</div></div>';
 		}
 		html+='</div>';
 		con.setHTML(html);
