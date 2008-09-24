@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="每日学口语" description="每天学一句英语口语,鼠标放在喇叭图标上可以收听读音" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="270" scaling="false">
+<ModulePrefs title="每日学口语" description="每天学一句英语口语,鼠标放在喇叭图标上可以收听读音" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="40" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
