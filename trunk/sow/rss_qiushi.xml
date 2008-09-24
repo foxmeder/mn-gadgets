@@ -38,6 +38,7 @@ function objItem(item){
 	if (item.getElementsByTagName("description")[0].firstChild){
 		this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue;
 		this.desc=this.desc.replace("&lt;","<");
+		this.desc=this.desc.replace("&gt;",">");
 	}else{
 		this.desc='';
 	}
