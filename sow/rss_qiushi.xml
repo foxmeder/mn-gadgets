@@ -36,7 +36,7 @@ function objItem(item){
 	this.title=item.getElementsByTagName("title")[0].firstChild.nodeValue;
 	this.url=item.getElementsByTagName("link")[0].firstChild.nodeValue;
 	if (item.getElementsByTagName("description")[0].firstChild){
-		this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue.replace(/[\n\r]/ig,"").substr(0,100);
+		this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue.replace(/[\n\r]/ig,"").substr(0,50);
 	}else{
 		this.desc='';
 	}
