@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="下落式电子钟" description="数字切换方式是下落的电子钟" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="270" scaling="false">
+<ModulePrefs title="下落式电子钟" description="数字切换方式是下落的电子钟" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="90" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
