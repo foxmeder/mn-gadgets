@@ -31,7 +31,7 @@ function initWData() {
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
-<iframe width="100%" height="420" allowTransparency="true" align="middle" scrolling="no" frameborder="0" src="http://8.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/112422617752071562289/calculator.xml"></iframe>
+
 <div id="mn_261" class="wd"></div>
 ]]>
 </Content>
