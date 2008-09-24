@@ -97,7 +97,8 @@ function showcontent(offset){
 		con.setHTML(html);
 		var desc=widget.body.getElementsByClassName("description");
 		for (i=0;i<desc.length ;i++ ){
-			UWA.$element(desc[i]).setHTML(_dataArray[i+offset].desc.substr(0,10));
+			alert(_dataArray[i+offset].desc.toString());
+			UWA.$element(desc[i]).setHTML(_dataArray[i+offset].desc);
 		}
 
 	}
