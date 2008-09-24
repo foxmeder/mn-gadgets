@@ -36,9 +36,7 @@ function objItem(item){
 	this.title=item.getElementsByTagName("title")[0].firstChild.nodeValue;
 	this.url=item.getElementsByTagName("link")[0].firstChild.nodeValue;
 	if (item.getElementsByTagName("description")[0].firstChild){
-		this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue;
-		this.desc=this.desc.replace("&lt;","<");
-		this.desc=this.desc.replace("&gt;",">");
+		this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue.replace(/[\n\r]/,"");
 	}else{
 		this.desc='';
 	}
@@ -97,8 +95,8 @@ function showcontent(offset){
 		con.setHTML(html);
 		var desc=widget.body.getElementsByClassName("description");
 		for (i=0;i<desc.length ;i++ ){
-			alert(_dataArray[i+offset].desc.toString());
-			UWA.$element(desc[i]).setHTML(_dataArray[i+offset].desc.toString());
+			alert(_dataArray[i+offset].desc);
+			UWA.$element(desc[i]).setHTML(_dataArray[i+offset].desc);
 		}
 
 	}
