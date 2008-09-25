@@ -97,10 +97,9 @@ widget.onLoad = widget.onRefresh = function(){
 </script>
 <style type="text/css">
 <!--
-.img_list {float:left;width:100%;}
-.img_list li{float:left;width:130px;padding:5px;height:130px;overflow:hidden;}
-.img_list li div{text-align:center}
-.img_list li img{border-style:solid;border-width:1px;padding:1px;width:120px;height:90px;}
+.thumb_list li{float:left;width:130px;padding:5px;height:130px;overflow:hidden;}
+.thumb_list li p{text-align:center}
+.thumb_list li img{width:120px;height:90px;}
 .wd {
 	padding:2px 0;
 	clear:both;
