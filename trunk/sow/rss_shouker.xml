@@ -89,6 +89,10 @@ function showcontent(offset){
 		_img[i]=new Image();
 		_img[i].src=_dataArray[i].src;
 		_img[i].index=i;
+		if(_img[i].complete){
+			setCon(con,_img[i]);
+			continue;
+		}
 		
 	}
 	html+='</ul>';
