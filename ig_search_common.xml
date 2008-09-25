@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="地区信息常用搜索" description="提供简单的地区常用信息搜索" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="155" scaling="false">
+<ModulePrefs title="地区信息常用搜索" description="提供简单的地区常用信息搜索" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="230" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
