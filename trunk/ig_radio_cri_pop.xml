@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="都市流行音乐台" description="中国国际广播电台都市流行音乐频道" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="190" scaling="false">
+<ModulePrefs title="都市流行音乐台" description="中国国际广播电台都市流行音乐频道" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="250" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
