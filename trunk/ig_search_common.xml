@@ -35,7 +35,7 @@ function initWData() {
 _IG_RegisterOnloadHandler(initWData);
 </script>
 <div class="t_com"><img src="http://www.mynon.cn/lt/search_common/images/weather.gif"/><span class="t_com">天气预报</span></div>
-<div><form name="weather" method="get" action="http://www.google.com/search" target="_blank" onsubmit="this.q.value=this.city.value+' q'">地名：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
+<div><form name="weather" method="get" action="http://www.google.com/search" target="_blank" onsubmit="this.q.value=this.city.value+' tq'">地名：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
 <input type="submit" value="查询"/></form></div>
 <div class="t_com"><img src="http://www.mynon.cn/lt/search_common/images/map_icon2.gif"/>电话区号邮编</div>
 <div><form name="city" method="get" action="http://www.google.com/search" target="_blank">地名：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
