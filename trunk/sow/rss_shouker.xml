@@ -83,9 +83,12 @@ function showcontent(offset){
 	}
 	var html='';
 	con=UWA.$element(widget.body.getElementsByClassName("pig")[0]);
-	html+='<ul class="thumb_list">';
+	html+='<ul class="thumb_list"></ul>';
+	con.setHTML(html);
+	var ul=UWA.$element(con.getElementsByTagName("ul")[0]);
 	for (i=offset;(i<_dataArray.length) && (i<offset+parseInt(widget.getValue("pagesize")));i++){
-		html+='<li><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank"><img src="'+_dataArray[i].src+'" class="img_'+i+'" /><p>'+_dataArray[i].title+'</p></a></li>';
+		var str='<li><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank"><img src="'+_dataArray[i].src+'" class="img_'+i+'" /><p>'+_dataArray[i].title+'</p></a></li>';
+		ul.addContent(str);
 		_img[i]=new Image();
 		_img[i].src=_dataArray[i].src;
 		_img[i].index=i;
@@ -93,10 +96,12 @@ function showcontent(offset){
 			setCon(con,_img[i]);
 			continue;
 		}
-		
+		_img[i].onload=function(){
+			setCon(con,this);
+		}
 	}
 	html+='</ul>';
-	con.setHTML(html);
+	
 	con.addContent(pager.getDom());
 }
 widget.onLoad = widget.onRefresh = function(){
