@@ -76,7 +76,7 @@ function showcontent(offset){
 	pager.onChange = function(offset) {
 		showcontent(offset);
 	}
-
+	var html='';
 	con=UWA.$element(widget.body.getElementsByClassName("pig")[0]);
 	html+='<ul class="thumb_list">';
 	for (i=offset;(i<_dataArray.length) && (i<offset+parseInt(widget.getValue("pagesize")));i++){
