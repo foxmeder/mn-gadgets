@@ -31,7 +31,7 @@ function initWData() {
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
-<iframe width="100%" height="165" allowTransparency="true" align="middle" scrolling="no" frameborder="0" src="http://www.mynon.cn/lt/img_youku/list_6cn.php"></iframe>
+<iframe width="100%" height="165" allowTransparency="true" align="middle" scrolling="no" frameborder="0" src="http://www.mynon.cn/lt/img_6cn/list_6cn.php"></iframe>
 <div id="mn_114" class="wd"></div>
 ]]>
 </Content>
