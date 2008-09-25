@@ -14,7 +14,7 @@ div {margin:3px 0;font-size:12px;}
 <script type="text/javascript">
 function showWData(data){
 	var data=eval('('+data+')');
-	var div = _gel("mn_112");
+	var div = _gel("mn_190");
 	var htmlCode='';
 	if(data.u && data.t){
 		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
@@ -29,8 +29,8 @@ function getWData(wid) {
 	_IG_FetchContent(url, showWData, {refreshInterval:0});
 }
 function initWData() {
-	var wid=112;
-	//getWData(wid);
+	var wid=190;
+	getWData(wid);
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
@@ -38,16 +38,13 @@ _IG_RegisterOnloadHandler(initWData);
 <div><form name="weather" method="get" action="http://www.google.com/search" target="_blank" onsubmit="this.q.value=this.city.value+' tq'">地名：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
 <input type="submit" value="查询"/></form></div>
 <div class="t_com"><img src="http://www.mynon.cn/lt/search_common/images/map_icon2.gif"/>电话区号邮编</div>
-<div><form name="city" method="get" action="http://www.google.com/search" target="_blank">地名：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
+<div><form name="city" method="get" action="http://www.google.com/search" target="_blank" onsubmit="this.q.value=this.city.value+' 邮编'">地名：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
 <input type="submit" value="查询"/></form></div>
-<div><form name="zipcode" method="get" action="http://www.google.com/search" target="_blank">邮编：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
+<div><form name="zipcode" method="get" action="http://www.google.com/search" target="_blank" onsubmit="this.q.value=this.city.value+' 邮编'">邮编：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
 <input type="submit" value="查询"/></form></div>
-<div><form name="areacode" method="get" action="http://www.google.com/search" target="_blank">区号：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
+<div><form name="areacode" method="get" action="http://www.google.com/search" target="_blank" onsubmit="this.q.value=this.city.value+' 区号'">区号：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
 <input type="submit" value="查询"/></form></div>
-<script type="text/javascript">
-
-</script>
-<div id="mn_112" class="wd"></div>
+<div id="mn_190" class="wd"></div>
 ]]>
 </Content>
 </Module>
