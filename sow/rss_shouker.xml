@@ -87,7 +87,7 @@ function showcontent(offset){
 	for (i=offset;(i<_dataArray.length) && (i<offset+parseInt(widget.getValue("pagesize")));i++){
 		html+='<li><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank"><img src="'+_dataArray[i].src+'" class="img_'+i+'" /><p>'+_dataArray[i].title+'</p></a></li>';
 		_img[i]=new Image();
-		_img[i].src=src;
+		_img[i].src=_dataArray[i].src;
 		_img[i].index=i;
 		if(_img[i].complete){
 			setCon(con,_img[i]);
