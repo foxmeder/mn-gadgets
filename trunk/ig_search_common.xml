@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="地区信息常用搜索" description="提供简单的地区常用信息搜索" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="155" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+div {margin:3px 0;font-size:12px;}
+.t_com {height:30px;line-height:30px;}
+.t_com img {float:left;height:30px;}
+.wd{margin:0;padding:2px 0;font-size:12px;}
+</style>
+<script type="text/javascript">
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_112");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	var wid=112;
+	//getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<div class="t_com"><img src="http://www.mynon.cn/lt/search_common/images/weather.gif"/><span class="t_com">天气预报</span></div>
+<div><form name="weather" method="get" action="http://www.google.com/search" target="_blank" onsubmit="this.q.value=this.city.value+' q'">地名：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
+<input type="submit" value="查询"/></form></div>
+<div class="t_com"><img src="http://www.mynon.cn/lt/search_common/images/map_icon2.gif"/>电话区号邮编</div>
+<div><form name="city" method="get" action="http://www.google.com/search" target="_blank">地名：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
+<input type="submit" value="查询"/></form></div>
+<div><form name="zipcode" method="get" action="http://www.google.com/search" target="_blank">邮编：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
+<input type="submit" value="查询"/></form></div>
+<div><form name="areacode" method="get" action="http://www.google.com/search" target="_blank">区号：<input type="text" name="city" style="width:50%"/><input type="hidden" name="hl" value="zh-CN"/><input type="hidden" name="q" value=""/> 
+<input type="submit" value="查询"/></form></div>
+<script type="text/javascript">
+
+</script>
+<div id="mn_112" class="wd"></div>
+]]>
+</Content>
+</Module>
