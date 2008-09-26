@@ -77,7 +77,6 @@ function checkbmi(i){
 </script>
 <style type="text/css">
 div{font-size:12px;}
-input{margin:0;padding:0;}
 .wd{padding:2px 0;font-size:12px;clear:both;}
 .bmiCon {
 	width:280px;
@@ -126,7 +125,7 @@ input{margin:0;padding:0;}
 <input type="radio" name="s" value="1" /><img src="http://www.mynon.cn/images/bk/img/ico_fon.gif" /><br/>
 身高：<input type="text" class="bminput" size="5" name="h" /> cm<br />
 体重：<input type="text" class="bminput" size="5" name="w" /> KG
-<div style="text-align:center"><input type="submit" value="确 定" /></div>
+<div style="text-align:center"><input type="submit" value="确 定" style="font-size:12px;" /></div>
 </form></div><div id="bmi"></div></div>
 <div id="mn_71" class="wd"></div>
 ]]>
