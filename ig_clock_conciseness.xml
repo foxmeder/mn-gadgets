@@ -31,7 +31,7 @@ function initWData() {
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
-<div style="text-align:center"><embed allowScriptAccess="never" allowNetworking="internal" src="http://www.mynon.cn/lt/clock_conciseness/clock_conciseness.swf" height="200" width="200" wmode="opaque" type="application/x-shockwave-flash"></embed></div>
+<div style="text-align:center"><embed allowScriptAccess="never" allowNetworking="internal" src="http://www.mynon.cn/lt/clock_conciseness/clock_conciseness.swf" height="200" width="200" wmode="transparent" type="application/x-shockwave-flash"></embed></div>
 <div id="mn_123" class="wd"></div>
 ]]>
 </Content>
