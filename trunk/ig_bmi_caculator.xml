@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="身体健康指数" description="身体脂肪健康指数(BMI)计算，看看自己的身材怎么样吧，适合正常成年人" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="220" scaling="false">
+<ModulePrefs title="身体健康指数" description="身体脂肪健康指数(BMI)计算，看看自己的身材怎么样吧，适合正常成年人" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="110" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
