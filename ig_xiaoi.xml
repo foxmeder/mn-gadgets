@@ -31,8 +31,7 @@ function initWData() {
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
-<iframe src="http://www.xiaoi.com/widget/1007/index.html"  allowTransparency="true"  height="265px" width="100%" frameborder="0" scrolling="no" ></iframe>
-<div id="mn_88" class="wd"></div>
+<div style="text-align:center"><iframe src="http://www.xiaoi.com/widget/1007/index.html"  allowTransparency="true"  height="260px" width="200px" frameborder="0" scrolling="no" ></iframe></div><div id="mn_88" class="wd"></div>
 ]]>
 </Content>
 </Module>
