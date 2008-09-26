@@ -70,8 +70,8 @@ function checkbmi(i){
 	}
 	rtnText+="</span>";
 	bmi=Math.round(bmi);
-	document.getElementById("bmiCon").className="bmiCon bmi"+src;
-	$(document.getElementById("bmi")).html("BMI指数："+bmi+"<br \/>"+rtnText);
+	_gel("bmiCon").className="bmiCon bmi"+src;
+	_gel("bmi").innerHTML=("BMI指数："+bmi+"<br \/>"+rtnText);
 	return false;
 }
 </script>
