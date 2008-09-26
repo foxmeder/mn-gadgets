@@ -19,7 +19,7 @@ function showWData(data){
 	}else{
 		div.style.display="none";
 	}
-	_IG_AdjustIFrameHeight();
+	//_IG_AdjustIFrameHeight();
 }
 function getWData(wid) {
 	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
