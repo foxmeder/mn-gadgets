@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="简约时钟" description="黑色背景的简约时钟，很酷哦" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="420" scaling="false">
+<ModulePrefs title="简约时钟" description="黑色背景的简约时钟，很酷哦" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="220" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
@@ -31,7 +31,7 @@ function initWData() {
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
-<div style="text-align:center"><embed allowScriptAccess="never" allowNetworking="internal" src="/lt/clock_conciseness/clock_conciseness.swf" height="200" width="200" wmode="opaque" type="application/x-shockwave-flash"></embed></div>
+<div style="text-align:center"><embed allowScriptAccess="never" allowNetworking="internal" src="http://www.mynon.cn/lt/clock_conciseness/clock_conciseness.swf" height="200" width="200" wmode="transparent" type="application/x-shockwave-flash"></embed></div>
 <div id="mn_123" class="wd"></div>
 ]]>
 </Content>
