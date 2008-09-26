@@ -98,7 +98,7 @@ div{font-size:12px;}
 }
 .bminput {
 	padding:0;
-	height:12px;
+	/*height:12px;*/
 }
 .bmiR {
 	color:#FF7802;
