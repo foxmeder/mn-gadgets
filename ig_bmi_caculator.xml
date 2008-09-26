@@ -98,7 +98,7 @@ div{font-size:12px;}
 }
 .bminput {
 	padding:0;
-	width:44px;
+	width:48px;
 	height:16px;
 }
 .bmiR {
