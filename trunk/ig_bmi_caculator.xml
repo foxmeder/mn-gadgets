@@ -86,17 +86,17 @@ function checkbmi(i){
 	margin:0 auto;
 }
 .bmiD {
-	background:url(/images/bk/img/bmi.gif) no-repeat 120px 0;
+	background:url(http://www.mynon.cn/images/bk/img/bmi.gif) no-repeat 120px 0;
 }
 #bmi {
 	margin-left:170px;
 	padding:20px 0;
 }
 .bmiw0 {
-	background:url(/images/bk/img/bmi.gif) no-repeat 120px -100px;
+	background:url(http://www.mynon.cn/images/bk/img/bmi.gif) no-repeat 120px -100px;
 }
 .bmim0 {
-	background:url(/images/bk/img/bmi.gif) no-repeat 120px -200px;
+	background:url(http://www.mynon.cn/images/bk/img/bmi.gif) no-repeat 120px -200px;
 }
 .bminput {
 	padding:0;
@@ -107,23 +107,23 @@ function checkbmi(i){
 	font-weight:bold;
 }
 .bmiw1 {
-	background:url(/images/bk/img/bmi.gif) no-repeat 120px -500px;
+	background:url(http://www.mynon.cn/images/bk/img/bmi.gif) no-repeat 120px -500px;
 }
 .bmiw2 {
-	background:url(/images/bk/img/bmi.gif) no-repeat 120px -600px;
+	background:url(http://www.mynon.cn/images/bk/img/bmi.gif) no-repeat 120px -600px;
 }
 .bmim1 {
-	background:url(/images/bk/img/bmi.gif) no-repeat 120px -300px;
+	background:url(http://www.mynon.cn/images/bk/img/bmi.gif) no-repeat 120px -300px;
 }
 .bmim2 {
-	background:url(/images/bk/img/bmi.gif) no-repeat 120px -400px;
+	background:url(http://www.mynon.cn/images/bk/img/bmi.gif) no-repeat 120px -400px;
 }
 </style>
 <div id="bmiCon" class="bmiCon bmiD">
 <div style="float:left;width:120px;">
 <form action="javascript:void(0)" onsubmit="return checkbmi(this)">
-性别：<input type="radio" name="s" value="0" checked="checked" /><img src="../images/bk/img/ico_mon.gif" />
-<input type="radio" name="s" value="1" /><img src="../images/bk/img/ico_fon.gif" /><br/>
+性别：<input type="radio" name="s" value="0" checked="checked" /><img src="http://www.mynon.cn/images/bk/img/ico_mon.gif" />
+<input type="radio" name="s" value="1" /><img src="http://www.mynon.cn/images/bk/img/ico_fon.gif" /><br/>
 身高：<input type="text" class="bminput" size="5" name="h" /> cm<br />
 体重：<input type="text" class="bminput" size="5" name="w" /> KG
 <div style="text-align:center"><input type="submit" value="确 定" /></div>
