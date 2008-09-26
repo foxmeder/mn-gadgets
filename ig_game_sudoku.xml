@@ -31,7 +31,7 @@ function initWData() {
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
-<div style="text-align:center"><iframe scrolling="no" width="280" height="304" marginwidth="0" marginheight="0" frameborder="0" src="../lt/list_sudoku.htm"></iframe></div>
+<script type="text/javascript" src="http://widgetserver.com/syndication/subscriber/InsertPanel.js?panelId=c61aa624-69da-4373-aa3e-da00c7ea1842"></script><noscript>Get great free widgets at <a href="http://www.widgetbox.com">Widgetbox</a>!</noscript><img style="visibility:hidden;width:0px;height:0px;" border="0" width="0" height="0" src="http://runtime.widgetbox.com/syndication/track/c61aa624-69da-4373-aa3e-da00c7ea1842.gif" />
 <div id="mn_37" class="wd"></div>
 ]]>
 </Content>
