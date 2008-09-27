@@ -14,7 +14,7 @@
 <meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_diglog.gif" />
 <meta name="debugMode" content="true" />
 <widget:preferences>
-	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="4"/>
+	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="7"/>
 	<preference type="boolean" label="显示细节" name="showtip"/>
 </widget:preferences>
 <script type="text/javascript">
