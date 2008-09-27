@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="单位换算" description="提供各种不同计量单位的换算功能" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="单位换算" description="提供各种不同计量单位的换算功能" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="160" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
