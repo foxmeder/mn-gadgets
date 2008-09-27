@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="电子钟" description="随时间变化背景的时钟，点击时钟和秒钟可以设置报时" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="电子钟" description="随时间变化背景的时钟，点击时钟和秒钟可以设置报时" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="80" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
