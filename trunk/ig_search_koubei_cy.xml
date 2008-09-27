@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="口碑餐饮搜索" description="按城市搜索全国各地的餐饮美食" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+.wd{padding:2px 0;font-size:12px;}
+</style>
+<script type="text/javascript">
+function querycanyin(){
+	document.getElementById("apibendi").src="http://ap.koubei.com/TraceRoutine/KoubeiAddJS.php?addname=apibendi";
+	document.search_canyinform.action =  "http://bendi.koubei.com/search/searchstore.html";
+	document.search_canyinform.submit();
+}
+function cleankoubeicanyin(){
+	var canyinkey = document.getElementById("canyinkey").value;
+	if(canyinkey=="请输入关键字，如川菜"){
+		document.getElementById("canyinkey").value="";
+	}
+}
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_43");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	var wid=43;
+	getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<form name="search_canyinform" method="get" target="_blank" onsubmit="querycanyin();">
+<a href="http://www.koubei.com" target="_blank"><img src="http://image1.koubei.com/images/api/search_logo.gif" alt="口碑网" align="absmiddle" border="0" /></a><input type="text" name="option.key" id="canyinkey" style="color:#666; font-size:14px" value="请输入关键字，如川菜" size="25"  onclick="cleankoubeicanyin()"/>
+	<select name="option.cityname"  style="color:#666;font-size:14px">
+		<option value="杭州"     >杭州</option>
+		<option value="北京"    selected >北京</option>
+        <option value="上海"     >上海</option>
+        <option value="天津"     >天津</option>
+        <option value="深圳"     >深圳</option>
+        <option value="成都"     >成都</option>
+        <option value="南京"     >南京</option>
+        <option value="广州"     >广州</option>
+        <option value="重庆"     >重庆</option>
+        <option value="福州"     >福州</option>
+        <option value="西安"     >西安</option>
+        <option value="长沙"     >长沙</option>
+        <option value="苏州"     >苏州</option>
+        <option value="武汉"     >武汉</option>
+        <option value="厦门"     >厦门</option>
+        <option value="济南"     >济南</option>
+        <option value="无锡"     >无锡</option>
+        <option value="郑州"     >郑州</option>
+        <option value="大连"     >大连</option>
+        <option value="珠海"     >珠海</option>
+        <option value="青岛"     >青岛</option>
+        <option value="合肥"     >合肥</option>
+        <option value="沈阳"     >沈阳</option>
+        <option value="南昌"     >南昌</option>
+        <option value="昆明"     >昆明</option>
+        <option value="宁波"     >宁波</option>
+        <option value="常州"     >常州</option>
+        <option value="哈尔滨"     >哈尔滨</option>
+        <option value="南宁"     >南宁</option>
+        <option value="贵阳"     >贵阳</option>
+        <option value="石家庄"     >石家庄</option>
+        <option value="长春"     >长春</option>
+        <option value="太原"     >太原</option>
+        <option value="温州"     >温州</option>
+        <option value="烟台"     >烟台</option>
+        <option value="盐城"     >盐城</option>
+        <option value="湖州"     >湖州</option>
+        <option value="义乌"     >义乌</option>
+        <option value="东莞"     >东莞</option>
+        <option value="佛山"     >佛山</option>
+        <option value="呼和浩特"     >呼和浩特</option>
+        <option value="泉州"     >泉州</option>
+        <option value="南通"     >南通</option>
+        <option value="海口"     >海口</option>
+        <option value="桂林"     >桂林</option>
+        <option value="嘉兴"     >嘉兴</option>
+        <option value="乌鲁木齐"     >乌鲁木齐</option>
+        <option value="金华"     >金华</option>
+        <option value="扬州"     >扬州</option>
+        <option value="兰州"     >兰州</option>
+        <option value="昆山"     >昆山</option>
+        <option value="中山"     >中山</option>
+        <option value="汕头"     >汕头</option>
+        <option value="唐山"     >唐山</option>
+        <option value="洛阳"     >洛阳</option>
+	</select>
+    <input type="hidden" name="ei" value="utf-8"/>
+    <input type="submit"  value="搜索" style="padding:0 5px;font-size:14px;" />
+    <img id="apibendi" src="" width="1" height="1" />
+</form>
+<div id="mn_43" class="wd"></div>
+]]>
+</Content>
+</Module>
