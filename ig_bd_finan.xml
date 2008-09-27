@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="百度财经" description="提供股票、基金等财经信息的搜索" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="90" scaling="false">
+<ModulePrefs title="百度财经" description="提供股票、基金等财经信息的搜索" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="75" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
