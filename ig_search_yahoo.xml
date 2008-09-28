@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="时钟" description="灰色背景的普通时钟" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="雅虎搜索" description="yahoo的搜索框" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="60" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
