@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="下一个节气" description="显示下一个节气的具体时间和说明" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="下一个节气" description="显示下一个节气的具体时间和说明" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="170" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
