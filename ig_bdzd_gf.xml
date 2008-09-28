@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="百度知道高分问题" description="显示百度知道的高分问题" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="百度知道高分问题" description="显示百度知道的高分问题" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="285" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
