@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="豆瓣书籍查询" description="输入书籍的ISBN号，即可查阅该书籍的相关信息" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="90" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+body,form{margin:0;padding:0}
+.wd{padding:2px 0;font-size:12px;}
+</style>
+<script type="text/javascript">
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_45");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	var wid=45;
+	getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<form method="post" action="javascript:void(0)" onsubmit="window.open('http://www.douban.com/isbn/'+this.isbn.value+'/');">
+<a href="http://www.douban.com" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/dou.gif" style="margin-bottom:-3px;"/></a>
+请输入书籍ISBN：<input type="text" name="isbn" size="17">
+<input type="submit" value="查 询">
+</form>
+<div id="mn_45" class="wd"></div>
+]]>
+</Content>
+</Module>
