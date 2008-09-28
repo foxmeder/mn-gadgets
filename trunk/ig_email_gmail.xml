@@ -83,7 +83,7 @@ var emailSub = function(i){
 };
 function showWData(data){
 	var data=eval('('+data+')');
-	var div = _gel("mn_45");
+	var div = _gel("mn_69");
 	var htmlCode='';
 	if(data.u && data.t){
 		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
@@ -98,7 +98,7 @@ function getWData(wid) {
 	_IG_FetchContent(url, showWData, {refreshInterval:0});
 }
 function initWData() {
-	var wid=45;
+	var wid=69;
 	getWData(wid);
 }
 _IG_RegisterOnloadHandler(initWData);
@@ -111,7 +111,7 @@ _IG_RegisterOnloadHandler(initWData);
 <dt></dt><dd><input class="submit" type="submit" value="登  录" /></dd>
 </dl>
 </form>
-<div id="mn_45" class="wd"></div>
+<div id="mn_69" class="wd"></div>
 ]]>
 </Content>
 </Module>
