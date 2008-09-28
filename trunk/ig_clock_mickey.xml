@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="米奇时钟" description="一款超可爱的米奇时钟。" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="370" scaling="false">
+<ModulePrefs title="米奇时钟" description="一款超可爱的米奇时钟。" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="380" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
