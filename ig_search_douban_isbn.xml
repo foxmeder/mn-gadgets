@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="豆瓣书籍查询" description="输入书籍的ISBN号，即可查阅该书籍的相关信息" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="90" scaling="false">
+<ModulePrefs title="豆瓣书籍查询" description="输入书籍的ISBN号，即可查阅该书籍的相关信息" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="50" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
