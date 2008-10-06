@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="8684公交查询" description="提供全国各地的公交线路、公交站点和公交换乘查询" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="8684公交查询" description="提供全国各地的公交线路、公交站点和公交换乘查询" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="100" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
