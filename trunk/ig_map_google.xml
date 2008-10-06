@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="谷歌地图" description="google地图查看，方便你查看全国各地地图" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="330" scaling="false">
+<ModulePrefs title="谷歌地图" description="google地图查看，方便你查看全国各地地图" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="345" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
