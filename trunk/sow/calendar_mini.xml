@@ -27,7 +27,9 @@ function getWData(wid) {
 	var url='http://www.mynon.cn/widget/data/interlink/'+wid+'/json';
 	UWA.Data.getJson(url,showWData);
 }
-widget.onLoad = widget.onRefresh = function(){
+widget.onLoad = function(){
+	var str = '<div class="pig"><embed pluginspage="http://www.adobe.com/go/getflashplayer" src="http://www.yourminis.com/Dir/GetContainer.api?uri=yourminis/yourminis/mini:calendar"  wmode="transparent" width="252" height="220" FlashVars="buildnumber=undefined&title=undefined&mininame=undefined&height=210&width=242&xheight=220&xwidth=252&dayoffset=0&uri=yourminis%2Fyourminis%2Fmini%3Acalendar&swfurl=%2Fwidget%5Fcalendar%2Eswf&" type="application/x-shockwave-flash" allowScriptAccess="always"></embed><div class="wd">数据加载中...</div></div>';
+	widget.setBody(str);
 	var wid=269;
 	getWData(wid);
 };
@@ -46,8 +48,6 @@ widget.onLoad = widget.onRefresh = function(){
 </style>
 </head>
 <body>
-<div class="pig">
-<embed pluginspage="http://www.adobe.com/go/getflashplayer" src="http://www.yourminis.com/Dir/GetContainer.api?uri=yourminis/yourminis/mini:calendar"  wmode="transparent" width="252" height="220" FlashVars="buildnumber=undefined&title=undefined&mininame=undefined&height=210&width=242&xheight=220&xwidth=252&dayoffset=0&uri=yourminis%2Fyourminis%2Fmini%3Acalendar&swfurl=%2Fwidget%5Fcalendar%2Eswf&" type="application/x-shockwave-flash" allowScriptAccess="always">-</embed><div class="wd">数据加载中...</div>
-</div>
+加载中...
 </body>
 </html>
