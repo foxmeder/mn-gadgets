@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
 <head>
-<title>炫酷日历</title>
+<title>找老A</title>
 <link rel="icon" type="image/x-icon" href="http://www.mynon.cn/favicon.ico" />
-<meta name="author" content="迈弄" />
+<meta name="author" content="mynon" />
 <meta name="website" content="http://www.mynon.cn" />
-<meta name="description" content="很炫很酷的黑色日历" />
+<meta name="description" content="洗牌后找到老A，鼠标点击后重新洗牌。" />
 <meta name="version" content="1.2" />
-<meta name="keyword" content="日历,工具" />
-<meta name="screenshot" content="http://www.mynon.cn/images/ow/screen/calendar_mini.gif" />
-<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/calendar_mini.gif" />
+<meta name="keyword" content="游戏,找老A,扑克" />
+<meta name="screenshot" content="http://www.mynon.cn/images/ow/screen/game_ace.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/game_ace.gif" />
 <meta name="debugMode" content="true" />
 <script type="text/javascript">
 <![CDATA[
@@ -28,17 +29,15 @@ function getWData(wid) {
 	UWA.Data.getJson(url,showWData);
 }
 widget.onLoad = function(){
-	var str = '<div class="pig"><embed pluginspage="http://www.adobe.com/go/getflashplayer" src="http://www.yourminis.com/Dir/GetContainer.api?uri=yourminis/yourminis/mini:calendar"  wmode="transparent" width="252" height="220" FlashVars="buildnumber=undefined&title=undefined&mininame=undefined&height=210&width=242&xheight=220&xwidth=252&dayoffset=0&uri=yourminis%2Fyourminis%2Fmini%3Acalendar&swfurl=%2Fwidget%5Fcalendar%2Eswf&" type="application/x-shockwave-flash" allowScriptAccess="always"></embed><div class="wd">数据加载中...</div></div>';
-	widget.setBody(str);
-	var wid=269;
+	var wid=272;
 	getWData(wid);
 };
 ]]>
 </script>
 <style type="text/css">
 <!--
-.pig{
-	width:252px;
+.pig {
+	width:320px;
 	margin:0 auto;
 }
 .wd {
@@ -48,6 +47,8 @@ widget.onLoad = function(){
 </style>
 </head>
 <body>
-加载中...
+<div class="pig">
+<embed allowScriptAccess="never" src="http://widgia.com/widgets/cardshuffle/cardshuffle.swf" quality="high" width="320" height="160"></embed><div class="wd">数据加载中...</div>
+</div>
 </body>
 </html>
