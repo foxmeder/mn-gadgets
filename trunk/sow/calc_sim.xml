@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+<head>
+<title>简约计算器</title>
+<link rel="icon" type="image/x-icon" href="http://www.mynon.cn/favicon.ico" />
+<meta name="author" content="mynon" />
+<meta name="website" content="http://www.mynon.cn" />
+<meta name="description" content="简约计算器" />
+<meta name="version" content="1.2" />
+<meta name="keyword" content="计算器,工具" />
+<meta name="screenshot" content="http://www.mynon.cn/images/ow/screen/calc_sim.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/calc_sim.gif" />
+<meta name="debugMode" content="true" />
+<script type="text/javascript">
+<![CDATA[
+function showWData(data){
+	var div = UWA.$element(widget.body.getElementsByClassName('wd')[0]);
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=ow_sohu" target="_blank">'+unescape(data.t)+'</a>';
+		div.setHTML(htmlCode);
+	}else{
+		div.hide();
+	}
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/'+wid+'/json';
+	UWA.Data.getJson(url,showWData);
+}
+widget.onLoad = function(){
+	var str = '<div class="pig"><embed pluginspage="http://www.adobe.com/go/getflashplayer" src="http://www.yourminis.com/Dir/GetContainer.api?uri=yourminis/yourminis/mini:calculator"  wmode="transparent" width="210" height="243" FlashVars="buildnumber=undefined&title=undefined&mininame=undefined&uri=yourminis%2Fyourminis%2Fmini%3Acalculator&swfurl=%2Fwidget%5Fcalculator%2Eswf&width=200&xwidth=210&height=233&xheight=243&" type="application/x-shockwave-flash" allowScriptAccess="always"></embed><div class="wd">数据加载中...</div></div>';
+	widget.setBody(str);
+	var wid=271;
+	getWData(wid);
+};
+]]>
+</script>
+<style type="text/css">
+<!--
+.pig{
+	width:210px;
+	margin:0 auto;
+}
+.wd {
+	padding:2px 0;
+}
+-->
+</style>
+</head>
+<body>
+加载中...
+</body>
+</html>
