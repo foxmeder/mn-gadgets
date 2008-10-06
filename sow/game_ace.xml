@@ -48,7 +48,7 @@ widget.onLoad = function(){
 </head>
 <body>
 <div class="pig">
-<embed allowScriptAccess="never" src="http://widgia.com/widgets/cardshuffle/cardshuffle.swf" quality="high" width="320" height="160"></embed><div class="wd">数据加载中...</div>
+<embed allowScriptAccess="never" src="http://widgia.com/widgets/cardshuffle/cardshuffle.swf" quality="high" width="320" height="160" wmode="transparent"></embed><div class="wd">数据加载中...</div>
 </div>
 </body>
 </html>
