@@ -3,15 +3,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
 <head>
-<title>河蟹娱乐</title>
+<title>我们爱讲冷笑话</title>
 <link rel="icon" type="image/x-icon" href="http://www.mynon.cn/images/favicon.gif" />
 <meta name="author" content="迈弄" />
 <meta name="website" content="http://www.mynon.cn" />
-<meta name="description" content="爱祖国 爱人民 唉派对" />
+<meta name="description" content="笑话居然还有冷热之分……? 究竟是谁不懂幽默……?" />
 <meta name="version" content="1.2" />
-<meta name="keyword" content="河蟹,有趣,娱乐" />
-<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_kisshi.gif" />
-<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_kisshi.gif" />
+<meta name="keyword" content="冷笑话,有趣" />
+<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_lxh.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_lxh.gif" />
 <meta name="debugMode" content="true" />
 <widget:preferences>
 	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="7"/>
@@ -103,9 +103,9 @@ function showcontent(offset){
 
 }
 widget.onLoad = widget.onRefresh = function(){
-	var url='http://feed.kisshi.com/';
+	var url='http://feed.feedsky.com/lengxiaohua';
 	UWA.Data.getXml(url,getcontentXML);
-	var wid=270;
+	var wid=273;
 	getWData(wid);
 };
 ]]>
@@ -129,7 +129,7 @@ widget.onLoad = widget.onRefresh = function(){
 </style>
 </head>
 <body>
-<div class="logo_head"><a href="http://kisshi.com/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_kisshi.gif" alt="河蟹娱乐"/></a></div>
+<div class="logo_head"><a href="http://lengxiaohua.net/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_lxh.gif" alt="我们爱讲冷笑话"/></a></div>
 <div class="pig">数据加载中...</div>
 <div class="wd">数据加载中...</div>
 </body>
