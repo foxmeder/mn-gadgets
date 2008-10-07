@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="搜狐免费邮箱登录" description="搜狐免费邮箱的快速登录窗口" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="110" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+body,form{margin:0;padding:0;font-size:12px;}
+img{border:none;}
+.wd{padding:2px 0;font-size:12px;}
+.mailform {
+	display:block;
+	width:220px;
+	margin:0 auto;
+}
+.mailform dl {
+	margin:0;
+}
+.mailform dt {
+	float:left;
+	width:65px;
+	text-align:right;
+}
+.mailform dd {
+	margin-left:65px;
+	padding:0;
+}
+.mailform input.txt {
+	width:125px;
+}
+.mailform .submit {
+	width:80px;
+	height:20px;
+}
+</style>
+<script type="text/javascript">
+var emailSub = function(i){
+	if(i.username.value==""){
+		alert("请填写邮箱用户名！");
+		i.username.focus();
+		return false;
+	}
+	if(i.password.value==""){
+		alert("请填写邮箱密码！");
+		i.password.focus();
+		return false;
+	}
+	var ML = new Array();
+	ML["sina"]=new Array("http://mail.sina.com.cn/cgi-bin/login.cgi","u","psw");
+	ML["sohu"]=new Array("http://passport.sohu.com/login.jsp","loginid","passwd","fl,1; vr,1|1; appid,1000; ru,http://login.mail.sohu.com/servlet/LoginServlet; eru,http://login.mail.sohu.com/login.jsp; ct,1173080990; sg,5082635c77272088ae7241ccdf7cf062","@sohu.com");
+	ML["21cn"]=new Array("http://passport.21cn.com/maillogin.jsp","LoginName","passwd","NeedMoreSecurity,on; NeedIpCheck,on");
+	ML["tom"]=new Array("http://bjweb.163.net/cgi/163/login_pro.cgi","user","pass","type,0; style,10");
+	ML["yahoo"]=new Array("http://edit.bjs.yahoo.com/config/login","login","passwd",".intl,cn; .done,http://mail.yahoo.com");
+	ML["gmail"]=new Array("https://www.google.com/accounts/ServiceLoginAuth","Email","Passwd","continue,http://mail.google.com/mail?zy=l; service,mail; hl,zh-CN");
+	var iMail=i.mail.value;
+	var username=i.username.value;
+	var passwd=i.password.value;
+	if(ML[iMail]!=null){
+		var MA = ML[iMail];
+		var b="<form name=\"em\" action=\""+MA[0]+"\" method=\"post\"><div style=\"display:none\">";
+		if(MA[3] != null){
+			var d=MA[3].split("; ");
+			for(var j=0;j<d.length;j++){
+				var c = d[j].split(",");
+				b+="<input type=\"hidden\" name=\""+c[0]+"\" value=\""+c[1]+"\" \/>";
+			}
+		}
+		if(MA[4] != null){
+			username+=MA[4];
+		}
+		b+="<input type=\"text\" name=\""+MA[1]+"\" value=\""+username+"\" \/>";
+		b+="<input type=\"password\" name=\""+MA[2]+"\" value=\""+passwd+"\" \/>";
+		b+="<input type=\"submit\" value=\"\" \/>";
+		b+="<\/div><\/form>";
+		//alert(b);
+		var a=window.open("").document;
+		a.body.innerHTML=b;
+		a.em.submit();
+	}
+	i.password.value="";
+	return false;
+};
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_68");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	var wid=68;
+	getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<form name="sohumail" class="mailform" action="javascript:void(0)" onsubmit="return emailSub(this);">
+<input type="hidden" name="mail" value="sohu" />
+<dl><dt></dt><dd><a href="http://mail.sohu.com" target="_blank"><img src="http://www.mynon.cn/images/mail/sohu.gif" /></a></dd>
+<dt><label>用户名：</label></dt><dd><input class="txt" type="text" name="username" /></dd>
+<dt><label>密&nbsp;&nbsp;&nbsp;码：</label></dt><dd><input class="txt" type="password" name="password" /></dd>
+<dt></dt><dd><input class="submit" type="submit" value="登  录" /></dd>
+</dl>
+</form>
+<div id="mn_68" class="wd"></div>
+]]>
+</Content>
+</Module>
