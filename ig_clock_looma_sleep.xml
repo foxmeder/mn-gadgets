@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="鲁玛时钟" description="鲁玛(Looma)Flash时钟之边睡边哼摇篮曲的鲁玛" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="180" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+.wd{padding:2px 0;font-size:12px;}
+</style>
+<script type="text/javascript">
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_117");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	var wid=117;
+	getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<div style="text-align:center"><embed allowScriptAccess="never" allowNetworking="internal" src="http://www.mynon.cn/lt/clock_looma_sleep/clock_looma_sleep.swf" height="160" width="140" wmode="transparent" type="application/x-shockwave-flash"></embed></div>
+<div id="mn_117" class="wd"></div>
+]]>
+</Content>
+</Module>
