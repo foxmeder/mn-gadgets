@@ -7,6 +7,7 @@
 <![CDATA[
 <style type="text/css">
 body,div{font-size:12px;}
+a img{border:none;}
 .left{float:left;}
 .ttime {
 	font-size: 20px;
