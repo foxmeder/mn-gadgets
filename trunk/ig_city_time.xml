@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="时钟" description="灰色背景的普通时钟" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="110" scaling="false">
+<ModulePrefs title="世界主要城市时间" description="选择显示不同国际城市的当前时间，点击地球图标可进入地图查看模式" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="110" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
 <![CDATA[
 <style type="text/css">
 body,div{font-size:12px;}
+form{margin:0;padding:0}
 a img{border:none;}
 .left{float:left;}
 .ttime {
