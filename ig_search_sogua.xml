@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="SoGua音乐搜索" description="可按音乐、歌词等分类进行搜索" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="SoGua音乐搜索" description="可按音乐、歌词等分类进行搜索" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="65" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
