@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="淘宝试衣间" description="我的衣橱，我的搭配！" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="295" scaling="false">
+<ModulePrefs title="淘宝试衣间" description="我的衣橱，我的搭配！" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="310" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
