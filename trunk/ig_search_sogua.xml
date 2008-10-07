@@ -8,6 +8,8 @@
 <style type="text/css">
 body,div{font-size:12px;}
 form{margin:0;padding:0}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
 a img{border:none}
 a.s {
 	font-weight:bold;
