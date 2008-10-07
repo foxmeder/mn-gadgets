@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="时钟" description="灰色背景的普通时钟" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+body,div{font-size:12px;}
+.ttime {
+	font-size: 20px;
+	}
+.shicha {
+	width:150px;
+	margin: 3px 0;
+}
+.torange{color:#FF7802;font-weight:bold;}
+.wd{padding:2px 0;font-size:12px;}
+</style>
+<script type="text/javascript">
+var clockString = function(dt){
+    var stemp ;
+    var dt_year = dt.getUTCFullYear() ;
+    var dt_month = dt.getUTCMonth() + 1 ;
+    var dt_day = dt.getUTCDate() ;
+    var dt_hour = dt.getUTCHours() ;
+    var dt_minute = dt.getUTCMinutes() ;
+    var dt_second = dt.getUTCSeconds() ;
+    dt_year = dt_year.toString() ;
+    if (dt_minute < 10){
+        dt_minute = '0' + dt_minute ;
+	}
+    if (dt_second < 10){
+        dt_second = '0' + dt_second ;
+	}
+    stemp = dt_year + '年' + dt_month + '月' + dt_day + '日';
+    stemp = stemp + ' ' + dt_hour + ":" + dt_minute + ":" + dt_second;
+    return stemp ;
+};
+var os = null;
+var updateClock = function(objForm){
+	with(objForm){
+		var tos = cityname.options[cityname.selectedIndex].value;
+	}
+	if(tos != 0){
+		os = tos;
+	}
+    //var dt = new Date(); // [GMT] time according to machine clock
+    //var startDST = new Date(dt.getFullYear(), 3, 1);
+    //while (startDST.getDay() != 0){
+    //    startDST.setDate(startDST.getDate() + 1);
+	//}
+    //var endDST = new Date(dt.getFullYear(), 9, 31);
+    //while (endDST.getDay() != 0){
+    //    endDST.setDate(endDST.getDate() - 1);
+	//}
+    //var ds_active ;  // DS currently active
+    //if (startDST < dt && dt < endDST){
+    //    ds_active = 1;
+    //}else{
+    //    ds_active = 0;
+	//}
+// Adjust each clock offset if that clock has DS and in DS.
+//    for(n=0 ; n<ct.length ; n++)
+//        if (ct[n].ds == 1 && ds_active == 1) ct[n].os++ ;
+// compensate time zones
+    var printstr = "";
+    gmdt = new Date();
+    var dt = new Date(gmdt.getTime() + os * 3600 * 1000);
+	document.getElementById("ccts").innerHTML = clockString(dt);
+	timerID = window.setTimeout("updateClock(document.ctform)",1001);
+};
+var fillCtry = function(objForm){
+	with(objForm){
+		var cOpt = null;
+		for(var i=0;i<ctry.length;i++){
+			cOpt = new Option(ctry[i],ctry[i]);
+			ctryname.options.add(cOpt,i+1);
+		}
+	}
+};
+var fillCity = function(objForm){
+	with(objForm){
+		var cname = ctryname.options[ctryname.selectedIndex].value;
+		if(cname==0){
+			return false;
+		}
+		var cityA = st[cname];
+		var cOpt =null;
+		cityname.length = 0;
+		cOpt = new Option("选择",0);
+		cityname.options.add(cOpt,0);
+		for(var i=0;i<cityA.length;i++){
+			cOpt = new Option(cityA[i].n,cityA[i].os);
+			cityname.options.add(cOpt,i+1);
+		}
+	}
+};
+var ctry = new Array("美国","阿尔及利亚","阿富汗","阿根廷","阿拉伯联合酋长国","埃及","埃塞俄比亚","爱尔兰","爱沙尼亚","奥地利","澳大利亚","巴哈马","巴基斯坦","巴拉圭","巴西","白俄罗斯","保加利亚","比利时","冰岛","波多黎各","波兰","玻利维亚","丹麦","德国","多米尼加","俄罗斯","法国","菲律宾","斐济","芬兰","古巴","韩国","荷兰","洪都拉斯","基里巴斯","加拿大","柬埔寨","捷克","津巴布韦","科威特","克罗地亚","肯尼亚","黎巴嫩","罗马尼亚","马达加斯加","马来西亚","美国","孟加拉","秘鲁","缅甸","摩洛哥","墨西哥","南非","尼泊尔","尼加拉瓜","尼日利亚","挪威","葡萄牙","日本","瑞典","瑞士","萨尔瓦多","塞尔维亚与蒙特内哥罗","沙特阿拉伯","苏丹","泰国","土耳其","危地马拉","委内瑞拉","乌克兰","乌拉圭","乌兹别克斯坦","西班牙","希腊","新加坡","新西兰","匈牙利","牙买加","也门","伊拉克","伊朗","以色列","意大利","印度","印尼","英国","约旦","越南","智利","中国");
+var st = new Array();
+st["美国"] = [
+	{n:"Honolulu 夏威夷檀香山",os:-10,ds:0},
+	{n:"Anchorage 阿拉斯加安克雷奇(*)",os:-8,ds:1},
+	{n:"San Francisco 旧金山(*)",os:-7,ds:1},
+	{n:"Seattle 西雅图(*)",os:-7,ds:1},
+	{n:"Los Angeles 洛杉矶(*)",os:-7,ds:1},
+	{n:"Phoenix 凤凰城",os:-7,ds:0},
+	{n:"Denver 丹佛(*)",os:-6,ds:1},
+	{n:"Houston 休斯敦(*)",os:-5,ds:1},
+	{n:"Minneapolis 明尼亚波利斯(*)",os:-5,ds:1},
+	{n:"St\.Paul 圣保罗(*)",os:-5,ds:1},
+	{n:"New Orleans 新奥尔良(*)",os:-5,ds:1},
+	{n:"Chicago 芝加哥(*)",os:-5,ds:1},
+	{n:"Montgomery 蒙哥马利(*)",os:-5,ds:1},
+	{n:"Indianapolis 印地安纳波利斯",os:-5,ds:0},
+	{n:"Atlanta 亚特兰大(*)",os:-4,ds:1},
+	{n:"Detroit 底特律(*)",os:-4,ds:1},
+	{n:"Washington DC 华盛顿哥伦比亚特区(*)",os:-4,ds:1},
+	{n:"Philadelphia 费城(*)",os:-4,ds:1},
+	{n:"New York 纽约(*)",os:-4,ds:1},
+	{n:"Boston 波士顿(*)",os:-4,ds:1}
+];
+st["阿根廷"] = [{n:"Buenos Aires 布宜诺斯艾利斯",os:-3,ds:1}];
+st["加拿大"] = [
+	{n:"Vancouver 温哥华(*)",os:-7,ds:1},
+	{n:"Aklavik 阿克拉维克(*)",os:-6,ds:1},
+	{n:"Edmonton 艾德蒙顿(*)",os:-6,ds:1},
+	{n:"Winnipeg 温尼伯(*)",os:-5,ds:1},
+	{n:"Toronto 多伦多(*)",os:-4,ds:1},
+	{n:"Ottawa 渥太华(*)",os:-4,ds:1},
+	{n:"Montreal 蒙特利尔(*)",os:-4,ds:1},
+	{n:"Halifax 哈里法克斯(*)",os:-4,ds:1},
+	{n:"St\.John\'s 圣约翰斯(*)",os:-2.5,ds:1}
+];
+st["中国"] = [
+	{n:"Beijing 北京",os:+8,ds:1},
+	{n:"Shanghai 上海",os:+8,ds:1},
+	{n:"Hong Kong 香港",os:+8,ds:1},
+	{n:"Taipei 台北",os:+8,ds:1}
+];
+st["墨西哥"] = [{n:"Mexico City 墨西哥城(*)",os:-5,ds:1}];
+st["阿尔及利亚"] = [{n:"Algiers 阿尔及尔",os:+1,ds:0}];
+st["阿富汗"] = [{n:"Kabul 喀布尔",os:+4.5,ds:0}];
+st["阿拉伯联合酋长国"] = [{n:"Abu Dhabi 阿布扎比",os:+4,ds:0}];
+st["埃及"] = [{n:"Cairo 开罗(*)",os:+3,ds:1}];
+st["埃塞俄比亚"] = [{n:"Addis Ababa 亚的斯亚贝巴",os:+3,ds:0}];
+st["爱尔兰"] = [{n:"Dublin 都柏林(*)",os:+1,ds:1}];
+st["爱沙尼亚"] = [{n:"Tallinn 塔林(*)",os:+3,ds:1}];
+st["奥地利"] = [{n:"Vienna 维也纳(*)",os:+2,ds:1}];
+st["澳大利亚"] = [
+	{n:"Sydney 悉尼(*)",os:+10,ds:1},
+	{n:"Perth 珀斯",os:+8,ds:0},
+	{n:"Melbourne 墨尔本(*)",os:+10,ds:1},
+	{n:"Darwin 达尔文",os:+9.5,ds:0},
+	{n:"Canberra 堪培拉(*)",os:+10,ds:1},
+	{n:"Brisbane 布里斯班",os:+10,ds:0},
+	{n:"Adelaide 亚特雷德(*)",os:+9.5,ds:1},
+];
+st["巴哈马"] = [{n:"Nassau 拿骚(*)",os:-4,ds:1}];
+st["巴基斯坦"] = [
+	{n:"Islamabad 伊斯兰堡",os:+5,ds:0},
+	{n:"Karachi 卡拉奇",os:+5,ds:0},
+	{n:"Lahore 拉合尔",os:+5,ds:0}
+];
+st["巴拉圭"] = [{n:"Asuncion 亚松森(*)",os:-4,ds:1}];
+st["巴西"] = [
+	{n:"Sao Paulo 圣保罗(*)",os:-3,ds:1},
+	{n:"Rio de Janeiro 里约热内卢(*)",os:-3,ds:1},
+	{n:"Brasilia 巴西利亚(*)",os:-3,ds:1}
+];
+st["白俄罗斯"] = [{n:"Minsk 明斯克(*)",os:+3,ds:1}];
+st["保加利亚"] = [{n:"Sofia 索非亚(*)",os:+3,ds:1}];
+st["比利时"] = [{n:"Brussels 布鲁塞尔(*)",os:+2,ds:1}];
+st["冰岛"] = [{n:"Reykjavik 雷克雅未克",os:0,ds:0}];
+st["波多黎各"] = [{n:"San Juan 圣胡安",os:-5,ds:0}];
+st["波兰"] = [{n:"Warsaw 华沙(*)",os:+2,ds:1}];
+st["玻利维亚"] = [{n:"La Paz 拉帕兹",os:-5,ds:0}];
+st["丹麦"] = [{n:"Copenhagen 哥本哈根(*)",os:+2,ds:1}];
+st["德国"] = [
+	{n:"Frankfurt 法兰克福(*)",os:+2,ds:1},
+	{n:"Berlin 柏林(*)",os:+2,ds:1}
+];
+st["多米尼加"] = [{n:"Santo Domingo 圣多明各",os:-5,ds:0}];
+st["俄罗斯"] = [
+	{n:"Moscow 莫斯科(*)",os:+4,ds:1},
+	{n:"Vladivostok 符拉迪沃斯托克(海参崴)(*)",os:+11,ds:1},
+	{n:"Kamchatka 堪察加(*)",os:+13,ds:1},
+	{n:"Anadyr 阿纳德尔(*)",os:+13,ds:1}
+];
+st["菲律宾"] = [{n:"Manila 马尼拉",os:+8,ds:0}];
+st["法国"] = [{n:"Paris 巴黎(*)",os:+2,ds:1}];
+st["斐济"] = [{n:"Suva 苏瓦",os:+12,ds:0}];
+st["芬兰"] = [{n:"Helsinki 赫尔辛基(*)",os:+3,ds:1}];
+st["古巴"] = [{n:"Havana 哈瓦那(*)",os:-4,ds:1}];
+st["韩国"] = [{n:"Seoul 首尔(汉城)",os:+9,ds:0}];
+st["荷兰"] = [{n:"Amsterdam 阿姆斯特丹(*)",os:+2,ds:1}];
+st["洪都拉斯"] = [{n:"Tegucigalpa 特古西加尔巴",os:-6,ds:0}];
+st["基里巴斯"] = [{n:"Kiritimati 圣诞岛",os:+14,ds:0}];
+st["柬埔寨"] = [{n:"Bogota 波哥大",os:-5,ds:0}];
+st["捷克"] = [{n:"Prague 布拉格(*)",os:+2,ds:1}];
+st["津巴布韦"] = [{n:"Harare 哈拉雷",os:+2,ds:0}];
+st["科威特"] = [{n:"Kuwait City 科威特城",os:+3,ds:0}];
+st["克罗地亚"] = [{n:"Zagreb 萨格雷布(*)",os:+2,ds:1}];
+st["肯尼亚"] = [{n:"Nairobi 内罗毕",os:+3,ds:0}];
+st["黎巴嫩"] = [{n:"Beirut 贝鲁特(*)",os:+3,ds:1}];
+st["罗马尼亚"] = [{n:"Bucharest 布加勒斯特(*)",os:+3,ds:1}];
+st["马达加斯加"] = [{n:"Antananarivo 安塔那那利佛",os:+3,ds:0}];
+st["马来西亚"] = [{n:"Kuala Lumpur 吉隆坡",os:+8,ds:0}];
+st["孟加拉"] = [{n:"Dhaka 达卡",os:+6,ds:0}];
+st["秘鲁"] = [{n:"Lima 利马",os:-5,ds:0}];
+st["缅甸"] = [{n:"Yangon 仰光",os:+6.5,ds:1}];
+st["摩洛哥"] = [{n:"Casablanca 卡萨布兰卡",os:0,ds:0}];
+st["南非"] = [
+	{n:"Cape Town 开普敦",os:+2,ds:0},
+	{n:"Johannesburg 约翰尼斯堡",os:+2,ds:0}
+];
+st["尼泊尔"] = [{n:"Kathmandu 加德满都",os:+5.75,ds:0}];
+st["尼加拉瓜"] = [{n:"Managua 马那瓜(*)",os:-6,ds:1}];
+st["尼日利亚"] = [{n:"Lagos 拉各斯",os:+1,ds:0}];
+st["挪威"] = [{n:"Oslo 奥斯陆(*)",os:+2,ds:1}];
+st["葡萄牙"] = [{n:"Lisbon 里斯本(*)",os:+1,ds:1}];
+st["日本"] = [{n:"Tokyo 东京",os:+9,ds:0}];
+st["瑞典"] = [{n:"Stockholm 斯德哥尔摩(*)",os:+2,ds:1}];
+st["瑞士"] = [
+	{n:"Zurich 苏黎世(*)",os:+2,ds:1},
+	{n:"Geneva 日内瓦(*)",os:+2,ds:1}
+];
+st["萨尔瓦多"] = [{n:"San Salvador 圣萨尔瓦多",os:-6,ds:0}];
+st["塞尔维亚与蒙特内哥罗"] = [{n:"Belgrade 贝尔格莱德(*)",os:+2,ds:1}];
+st["沙特阿拉伯"] = [{n:"Riyadh 利雅得",os:+3,ds:0}];
+st["苏丹"] = [{n:"Khartoum 喀土穆",os:+3,ds:0}];
+st["泰国"] = [{n:"Bangkok 曼谷",os:+7,ds:0}];
+st["土耳其"] = [
+	{n:"Ankara 安卡拉(*)",os:+3,ds:1},
+	{n:"Istanbul 伊斯坦布尔(*)",os:+3,ds:1}
+];
+st["危地马拉"] = [{n:"Guatemala 危地马拉",os:-6,ds:0}];
+st["委内瑞拉"] = [{n:"Caracas 加拉加斯",os:-5,ds:0}];
+st["乌克兰"] = [
+	{n:"Odesa 敖德萨(*)",os:+3,ds:1},
+	{n:"Kyiv 基辅(*)",os:+3,ds:1}
+];
+st["乌拉圭"] = [{n:"Montevideo 蒙特维的亚(*)",os:-3,ds:1}];
+st["乌兹别克斯坦"] = [{n:"Tashkent 塔什干",os:+5,ds:0}];
+st["西班牙"] = [
+	{n:"Barcelona 巴塞罗那(*)",os:+2,ds:1},
+	{n:"Madrid 马德里(*)",os:+2,ds:1}
+];
+st["希腊"] = [{n:"Athens 雅典城(*)",os:+3,ds:1}];
+st["新加坡"] = [{n:"Singapore 新加坡",os:+8,ds:0}];
+st["新西兰"] = [
+	{n:"Wellington 惠灵顿(*)",os:+12,ds:1},
+	{n:"Chatham Island 查塔姆群岛(*)",os:+12.75,ds:1}
+];
+st["匈牙利"] = [{n:"Budapest 布达佩斯(*)",os:+2,ds:1}];
+st["牙买加"] = [{n:"Kingston 金斯敦",os:-5,ds:0}];
+st["也门"] = [{n:"Aden 亚丁",os:+3,ds:0}];
+st["伊拉克"] = [{n:"Baghdad 巴格达(*)",os:+4,ds:1}];
+st["伊朗"] = [{n:"Tehran 德黑兰",os:+3.5,ds:1}];
+st["以色列"] = [{n:"Jerusalem 耶路撒冷(*)",os:+3,ds:1}];
+st["意大利"] = [{n:"Rome 罗马(*)",os:+2,ds:1}];
+st["印度"] = [
+	{n:"New Delhi 新德里",os:+5.5,ds:0},
+	{n:"Mumbai 孟买",os:+5.5,ds:0},
+	{n:"Kolkata 柯尔喀塔",os:+5.5,ds:0}
+];
+st["印尼"] = [{n:"Jakarta 雅加达",os:+7,ds:0}];
+st["英国"] = [{n:"London 伦敦(*)",os:+1,ds:1}];
+st["约旦"] = [{n:"Amman 安曼(*)",os:+3,ds:1}];
+st["越南"] = [{n:"Hanoi 河内",os:+7,ds:0}];
+st["智利"] = [{n:"Santiago 圣地亚哥",os:-4,ds:1}];
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_34");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	fillCtry(document.ctform);
+	var wid=34;
+	getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<div style="text-align:center">
+<form name="ctform">
+<div id="ccts" class="torange ttime"></div>
+<div style="width:240px;margin:0 auto"><a href="http://www.mynon.cn/widget/data/game/34/page" target="_blank"><img style="margin-top:2px" class="left" src="http://www.mynon.cn/images/globe.gif"/></a><select class="shicha" onchange="fillCity(this.form)" name="ctryname"><option value="0">选择国家</option></select><br/><select class="shicha" onchange="updateClock(this.form)" name="cityname"><option value="0">选择城市</option></select></div>
+</form>
+</div>
+<div id="mn_34" class="wd"></div>
+]]>
+</Content>
+</Module>
