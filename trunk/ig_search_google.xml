@@ -15,7 +15,7 @@ a.s {
 	font-weight:bold;
 	cursor:default;
 }
-.wd{padding:2px 0;font-size:12px;}
+.wd{padding:2px 0;font-size:12px;clear:both}
 </style>
 <script type="text/javascript" src="http://mn-gadgets.googlecode.com/svn/trunk/js/jquery.js"></script>
 <script type="text/javascript">
