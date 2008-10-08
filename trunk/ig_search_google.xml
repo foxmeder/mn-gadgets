@@ -19,19 +19,19 @@ a.s {
 </style>
 <script type="text/javascript" src="http://mn-gadgets.googlecode.com/svn/trunk/js/jquery.js"></script>
 <script type="text/javascript">
-function sg_change(anchor){
+function g_change(anchor){
 	if($(anchor).hasClass("s")){
 		return false;
 	}else{
-		document.sgform.u.value=anchor.getAttribute("href");
-		$("a.s",document.sgform).removeClass("s");
+		document.googleform.u.value=anchor.getAttribute("href");
+		$("a.s",document.googleform).removeClass("s");
 		$(anchor).addClass("s");
 		return false;
 	}
 	return false;
 }
-function initSG(objForm){
-	$("a",objForm).slice(1).css("padding","0 4px").click(function(){return sg_change(this);});
+function initG(objForm){
+	$("a",objForm).css("padding","0 4px").slice(1,5).click(function(){return g_change(this);});
 }
 function showWData(data){
 	var data=eval('('+data+')');
@@ -50,7 +50,7 @@ function getWData(wid) {
 	_IG_FetchContent(url, showWData, {refreshInterval:0});
 }
 function initWData() {
-	initSG(document.googleform);
+	initG(document.googleform);
 	var wid=51;
 	getWData(wid);
 }
