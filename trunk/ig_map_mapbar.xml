@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="图吧地图" description="集地图搜索、公交查询、分类地图等功能于一体的地图搜索工具" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+.wd{padding:2px 0;font-size:12px;}
+</style>
+<script type="text/javascript">
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_92");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	var wid=92;
+	getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<div style="text-align:center">
+<div><a href="http://www.mynon.cn/widget/data/game/92/page" target="_blank">点击马上开始</a></div>
+<script>
+var boxhref =window.location.href;
+var href = "pageType=0&CID=mynon&city=%E5%8C%97%E4%BA%AC%E5%B8%82&maxMap=0";
+if(boxhref.indexOf('?') != -1){
+var hrefArr = boxhref.split('?');
+href=hrefArr[1];
+}
+document.write("<iframe id='mapbarframe' border='0' vspace='0' hspace='0' marginwidth='0' marginheight='0' framespacing='0' frameborder='0' scrolling='no' width='400' height='300' src='http://searchbox.mapbar.com/channel/index.jsp?"+href+"'></iframe>");
+</script></div>
+<div id="mn_92" class="wd"></div>
+]]>
+</Content>
+</Module>
