@@ -8,6 +8,7 @@
 <style type="text/css">
 body,div{font-size:12px;}
 form{margin:0;padding:0}
+a img{border:none;}
 .wd{padding:2px 0;font-size:12px;}
 </style>
 <script type="text/javascript">
