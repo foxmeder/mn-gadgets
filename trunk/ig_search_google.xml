@@ -50,7 +50,7 @@ function getWData(wid) {
 	_IG_FetchContent(url, showWData, {refreshInterval:0});
 }
 function initWData() {
-	initSG(document.sgform);
+	initSG(document.googleform);
 	var wid=51;
 	getWData(wid);
 }
