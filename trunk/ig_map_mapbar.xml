@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="图吧地图" description="集地图搜索、公交查询、分类地图等功能于一体的地图搜索工具" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="图吧地图" description="集地图搜索、公交查询、分类地图等功能于一体的地图搜索工具" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="340" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
