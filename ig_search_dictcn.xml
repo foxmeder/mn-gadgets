@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="海词在线英语词典" description="海词在线词典，支持英文和中文查询，而且配有英文读音" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="海词在线英语词典" description="海词在线词典，支持英文和中文查询，而且配有英文读音" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="295" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
@@ -32,7 +32,7 @@ function showWData(data){
 	}else{
 		div.style.display="none";
 	}
-	_IG_AdjustIFrameHeight();
+	//_IG_AdjustIFrameHeight();
 }
 function getWData(wid) {
 	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
