@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="海词在线英语词典" description="海词在线词典，支持英文和中文查询，而且配有英文读音" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+body,div{font-size:12px;}
+form{margin:0;padding:0}
+.wd{padding:2px 0;font-size:12px;}
+</style>
+<script type="text/javascript">
+function dictSub(objForm){
+	var query=objForm.q.value;
+	if(query==""){
+		alert("请填写要查询的内容");
+		return false;
+	}
+	_gel("frame_97").src="http://dict.cn/mini.php?q="+query;
+	_gel("frame_97").style.display="block";
+	return false;
+}
+
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_97");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	var wid=97;
+	getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<form action="" onsubmit="return dictSub(this);"><a href="http://www.dict.cn/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/dictcn.gif" /></a> <input type="text" name="q" /> <input type="submit" value="查询" /></form><iframe style="display:none" src="" name="dict" id="frame___Module_id__" width="100%" height="240" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+<div id="mn_97" class="wd"></div>
+]]>
+</Content>
+</Module>
