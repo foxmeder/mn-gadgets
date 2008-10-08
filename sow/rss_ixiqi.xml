@@ -3,15 +3,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
 <head>
-<title>煎蛋</title>
+<title>爱稀奇</title>
 <link rel="icon" type="image/x-icon" href="http://www.mynon.cn/images/favicon.gif" />
 <meta name="author" content="迈弄" />
 <meta name="website" content="http://www.mynon.cn" />
-<meta name="description" content="煎蛋其实是很有趣的" />
+<meta name="description" content="搜罗全球新鲜玩意儿" />
 <meta name="version" content="1.2" />
 <meta name="keyword" content="煎蛋,有趣" />
-<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_jiandan.gif" />
-<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_jiandan.gif" />
+<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_ixiqi.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_ixiqi.gif" />
 <meta name="debugMode" content="true" />
 <widget:preferences>
 	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="7"/>
@@ -103,9 +103,9 @@ function showcontent(offset){
 
 }
 widget.onLoad = widget.onRefresh = function(){
-	var url='http://feed.jandan.net/';
+	var url='http://www.ixiqi.com/feed';
 	UWA.Data.getXml(url,getcontentXML);
-	var wid=278;
+	var wid=279;
 	getWData(wid);
 };
 ]]>
@@ -129,7 +129,7 @@ widget.onLoad = widget.onRefresh = function(){
 </style>
 </head>
 <body>
-<div class="logo_head"><a href="http://jandan.net/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_jiandan.gif" alt="煎蛋"/></a></div>
+<div class="logo_head"><a href="http://www.ixiqi.com/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_ixiqi.gif" alt="爱稀奇"/></a></div>
 <div class="pig">数据加载中...</div>
 <div class="wd">数据加载中...</div>
 </body>
