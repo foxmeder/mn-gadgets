@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="灵图UU" description="我要地图Flash版——灵图UU，集地图浏览，搜索，公交查询等功能与一身的地图浏览器" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="320" scaling="false">
+<ModulePrefs title="灵图UU" description="我要地图Flash版——灵图UU，集地图浏览，搜索，公交查询等功能与一身的地图浏览器" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="590" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
@@ -32,7 +32,7 @@ function initWData() {
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
-<div style="text-align:center"><div><a href="/widget/data/game/142/page" target="_blank">使用全屏模式</a></div><embed src="http://uu.51ditu.com/uu/uu.swf" wmode="opaque" quality="high" scale="noscale" bgcolor="#C4C8D4" width="410" height="287" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" swLiveConnect="true" name="mapFlash"></embed></div>
+<div style="text-align:center"><div><a href="http://www.mynon.cn/widget/data/game/142/page" target="_blank">使用全屏模式</a></div><embed src="http://uu.51ditu.com/uu/uu.swf" wmode="opaque" quality="high" scale="noscale" bgcolor="#C4C8D4" width="410" height="550" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" swLiveConnect="true" name="mapFlash"></embed></div>
 <div id="mn_142" class="wd"></div>
 ]]>
 </Content>
