@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs title="火星文转换器" description="火星文字，反对的人称它为“脑残体”。这种新字体有些字在字典里是找不到的，它们多为两个字的偏旁组合或者是汉字的部分笔画，或者是从外国汉字里援用过来的，通常被一些80、90后的孩子用在QQ签名或者博客上。" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+	<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html">
+<![CDATA[
+<style type="text/css">
+.wd{padding:2px 0;font-size:12px;}
+</style>
+<script type="text/javascript" src="http://mn-gadgets.googlecode.com/svn/trunk/js/gb2312_big5.js"></script>
+<script type="text/javascript">
+function convert(t){
+	var objTxt=$("#m_210_txt");
+	var txt=objTxt.val();
+	if(t==0){
+		objTxt.val(simplized(txt));
+	}else{
+		objTxt.val(traditionalized(txt));
+	}
+}
+
+function showWData(data){
+	var data=eval('('+data+')');
+	var div = _gel("mn_210");
+	var htmlCode='';
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=os_ty" target="_blank">'+unescape(data.t)+'</a>';
+		div.innerHTML=htmlCode;
+	}else{
+		div.style.display="none";
+	}
+	_IG_AdjustIFrameHeight();
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/tianya/'+wid+'/json';
+	_IG_FetchContent(url, showWData, {refreshInterval:0});
+}
+function initWData() {
+	var wid=210;
+	getWData(wid);
+}
+_IG_RegisterOnloadHandler(initWData);
+</script>
+<div style="text-align:center"><textarea id="m_210_txt" style="width:90%;height:60px;">哈，这就是传说中的火星文</textarea></div>
+<div><input type="button" value="变变变" onclick="convert(1)"/> <input type="button" onclick="convert(0)" value="变回去"/></div>
+<div id="mn_210" class="wd"></div>
+]]>
+</Content>
+</Module>
