@@ -10,7 +10,7 @@ textarea,input{font-size:12px;}
 .wd{padding:2px 0;font-size:12px;}
 </style>
 <script type="text/javascript" src="http://mn-gadgets.googlecode.com/svn/trunk/js/jquery.js"></script>
-<script type="text/javascript" src="http://mn-gadgets.googlecode.com/svn/trunk/js/gb2312_big5.js"></script>
+<script type="text/javascript" src="http://mn-gadgets.googlecode.com/svn/trunk/js/GB2312_BIG5.js"></script>
 <script type="text/javascript">
 function convert(t){
 	var objTxt=$("#m_210_txt");
