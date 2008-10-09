@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="火星文转换器" description="火星文字，反对的人称它为“脑残体”。这种新字体有些字在字典里是找不到的，它们多为两个字的偏旁组合或者是汉字的部分笔画，或者是从外国汉字里援用过来的，通常被一些80、90后的孩子用在QQ签名或者博客上。" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="150" scaling="false">
+<ModulePrefs title="火星文转换器" description="火星文字，反对的人称它为“脑残体”。这种新字体有些字在字典里是找不到的，它们多为两个字的偏旁组合或者是汉字的部分笔画，或者是从外国汉字里援用过来的，通常被一些80、90后的孩子用在QQ签名或者博客上。" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="105" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
