@@ -6,6 +6,7 @@
 <Content type="html">
 <![CDATA[
 <style type="text/css">
+textarea,input{font-size:12px;}
 .wd{padding:2px 0;font-size:12px;}
 </style>
 <script type="text/javascript" src="http://mn-gadgets.googlecode.com/svn/trunk/js/gb2312_big5.js"></script>
@@ -42,7 +43,7 @@ function initWData() {
 }
 _IG_RegisterOnloadHandler(initWData);
 </script>
-<div style="text-align:center"><textarea id="m_210_txt" style="width:90%;height:60px;">哈，这就是传说中的火星文</textarea></div>
+<textarea id="m_210_txt" style="width:90%;height:60px;">哈，这就是传说中的火星文</textarea>
 <div><input type="button" value="变变变" onclick="convert(1)"/> <input type="button" onclick="convert(0)" value="变回去"/></div>
 <div id="mn_210" class="wd"></div>
 ]]>
