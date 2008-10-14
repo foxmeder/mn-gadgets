@@ -176,8 +176,8 @@ widget.onLoad = widget.onRefresh = function(){
 		var con=UWA.$element(widget.body.getElementsByClassName("pig")[0]);
 		con.setHTML("你可以通过设置填写关键字");
 	}
-	var wid=274;
-	//getWData(wid);
+	var wid=288;
+	getWData(wid);
 };
 ]]>
 </script>
