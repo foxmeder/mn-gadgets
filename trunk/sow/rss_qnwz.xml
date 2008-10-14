@@ -104,7 +104,7 @@ function showcontent(offset){
 }
 function getUrl(){
 	var el=widget.body.getElementsByClassName("rss_sel")[0];
-	var url=el.options[el.selectIndex].value;
+	var url=el.options[el.selectedIndex].value;
 	UWA.Data.getXml(url,getcontentXML);
 }
 widget.onLoad = widget.onRefresh = function(){
