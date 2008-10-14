@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+<head>
+<title>特色小软件</title>
+<link rel="icon" type="image/x-icon" href="http://www.mynon.cn/images/favicon.gif" />
+<meta name="author" content="迈弄" />
+<meta name="website" content="http://www.mynon.cn" />
+<meta name="description" content="分享免费、小巧、实用、有趣、绿色的软件,我们的口号是：没有流氓" />
+<meta name="version" content="1.2" />
+<meta name="keyword" content="软件,绿色,免费" />
+<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_appinn.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_appinn.gif" />
+<meta name="debugMode" content="true" />
+<widget:preferences>
+	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="3"/>
+	<preference type="boolean" label="显示细节" name="showtip" defaultValue="true"/>
+</widget:preferences>
+<script type="text/javascript">
+<![CDATA[
+function showWData(data){
+	var div = UWA.$element(widget.body.getElementsByClassName('wd')[0]);
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;width:16px;height:16px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'&f=ow_sohu" target="_blank">'+unescape(data.t)+'</a>';
+		div.setHTML(htmlCode);
+	}else{
+		div.hide();
+	}
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/'+wid+'/json';
+	UWA.Data.getJson(url,showWData);
+}
+function objItem(item){
+	this.title=item.getElementsByTagName("title")[0].firstChild.nodeValue;
+	this.url=item.getElementsByTagName("link")[0].firstChild.nodeValue;
+	if (item.getElementsByTagName("description")[0].firstChild){
+		this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue;
+	}else{
+		this.desc='';
+	}
+}
+var _dataArray=new Array();
+function getcontentXML(xmlobj) {
+
+	var results = xmlobj;
+
+	var item = null;
+
+	var items = results.getElementsByTagName("item");
+
+	_dataArray = new Array();
+
+	for(var i = 0;i < items.length; i++) {
+
+		item = items[i];
+
+		_dataArray[i] = new objItem(item);
+
+	}
+
+	showcontent(0);
+
+}
+function showcontent(offset){
+	var pager = new UWA.Controls.Pager({
+		module: widget,
+		limit: widget.getValue("pagesize"),
+		offset: offset,
+		dataArray: _dataArray
+	});
+
+	pager.onChange = function(offset) {
+		showcontent(offset);
+	}
+
+	html="";
+	con=UWA.$element(widget.body.getElementsByClassName("pig")[0]);
+
+	if (widget.getValue("showtip")=="false"){
+
+		html+='<ul class="text_list">';
+		for (i=offset;(i<_dataArray.length) && (i<offset+parseInt(widget.getValue("pagesize")));i++){
+			html+='<li><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></li>';
+		}
+		html+='</ul>';
+		con.setHTML(html);
+	}else{
+		html+='<div class="rich_list">';
+		for (i=offset;(i<_dataArray.length) && (i<offset+parseInt(widget.getValue("pagesize")));i++){
+			html+='<div class="item"><h3><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></h3><div class="description">加载中...</div></div>';
+		}
+		html+='</div>';
+		con.setHTML(html);
+		var desc=widget.body.getElementsByClassName("description");
+		for (i=0;i<desc.length ;i++ ){
+			UWA.$element(desc[i]).setHTML(_dataArray[i+offset].desc);
+		}
+
+	}
+	con.addContent(pager.getDom());
+
+}
+widget.onLoad = widget.onRefresh = function(){
+	var url='http://feed.appinn.com/';
+	UWA.Data.getXml(url,getcontentXML);
+	var wid=285;
+	getWData(wid);
+};
+]]>
+</script>
+<style type="text/css">
+<!--
+.oly_head{
+	height:31px;
+}
+.oly_head img {
+	float:left;
+}
+.oly_head a {
+	margin-left:10px;
+}
+.wd {
+	padding:2px 0;
+	clear:both;
+}
+-->
+</style>
+</head>
+<body>
+<div class="logo_head"><a href="http://www.appinn.com/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_appinn.gif" alt="特色小软件"/></a></div>
+<div class="pig">数据加载中...</div>
+<div class="wd">数据加载中...</div>
+</body>
+</html>
