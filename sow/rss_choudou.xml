@@ -3,19 +3,19 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
 <head>
-<title>青年文摘</title>
+<title>臭豆</title>
 <link rel="icon" type="image/x-icon" href="http://www.mynon.cn/images/favicon.gif" />
 <meta name="author" content="迈弄" />
 <meta name="website" content="http://www.mynon.cn" />
-<meta name="description" content="年轻人都应该常读《青年文摘》" />
+<meta name="description" content="中文新鲜网志集群" />
 <meta name="version" content="1.2" />
-<meta name="keyword" content="青年文摘" />
-<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_qnwz.gif" />
-<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_qnwz.gif" />
+<meta name="keyword" content="新鲜,网志,臭豆" />
+<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_choudou.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_choudou.gif" />
 <meta name="debugMode" content="true" />
 <widget:preferences>
-	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="3"/>
-	<preference type="boolean" label="显示细节" name="showtip" defaultValue="true"/>
+	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="7"/>
+	<preference type="boolean" label="显示细节" name="showtip"/>
 </widget:preferences>
 <script type="text/javascript">
 <![CDATA[
@@ -64,7 +64,7 @@ function getcontentXML(xmlobj) {
 
 }
 function showcontent(offset){
-	var subfix="http://www.qnwz.cn";
+	var subfix="";
 	var pager = new UWA.Controls.Pager({
 		module: widget,
 		limit: widget.getValue("pagesize"),
@@ -112,7 +112,7 @@ widget.onLoad = widget.onRefresh = function(){
 	var el=widget.body.getElementsByClassName("rss_sel")[0];
 	el.onchange=getUrl;
 	getUrl();
-	var wid=284;
+	var wid=287;
 	getWData(wid);
 };
 ]]>
@@ -136,8 +136,8 @@ widget.onLoad = widget.onRefresh = function(){
 </style>
 </head>
 <body>
-<div class="logo_head"><a href="http://www.qnwz.cn/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_qnwz.gif" alt="青年文摘"/></a>
-<select class="rss_sel"><option value="http://www.qnwz.cn/plus/rss/124.xml">红版精品</option><option value="http://www.qnwz.cn/plus/rss/125.xml">绿版精品</option><option value="http://www.qnwz.cn/plus/rss/126.xml">彩版精品</option><option value="http://www.qnwz.cn/plus/rss/62.xml">电子杂志精品</option><option value="http://www.qnwz.cn/plus/rss/88.xml">原创</option></select></div>
+<div class="logo_head"><a href="http://www.choudou.com/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_choudou.gif" alt="臭豆"/></a>
+<select class="rss_sel"><option value="http://feed.feedsky.com/digiart">广告放肆</option><option value="http://feed.feedsky.com/since1984">设计｜生活｜发现新鲜</option><option value="http://feed.feedsky.com/iwawoo">摩登志</option><option value="http://feed.feedsky.com/allcoolmen">全型男</option><option value="http://feed.feedsky.com/blueh">BLUE GENE</option><option value="http://feed.feedsky.com/cooolo">酷辣客</option><option value="http://feed.feedsky.com/medowo">Cngadget</option><option value="http://feeds.badblue.net/">Badblue</option><option value="http://feed.feedsky.com/mm360">瞄瞄网</option><option value="http://feed.feedsky.com/bzmusique">白音昼乐 | BZMUSIQUE</option><option value="http://feed.feedsky.com/gaga">嘎嘎在东京</option><option value="http://feed.feedsky.com/iamting">爱枣报</option><option value="http://www.if-g.com/feed">绿色播报 IF Green</option></select></div>
 <div class="pig">数据加载中...</div>
 <div class="wd">数据加载中...</div>
 </body>
