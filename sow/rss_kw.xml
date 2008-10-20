@@ -174,7 +174,7 @@ widget.onLoad = widget.onRefresh = function(){
 		UWA.Data.getXml(url,getcontentXML);
 	}else{
 		var con=UWA.$element(widget.body.getElementsByClassName("pig")[0]);
-		con.setHTML("你可以通过设置填写关键字");
+		con.setHTML("你可以通过设置填写关键词");
 	}
 	var wid=288;
 	getWData(wid);
