@@ -114,7 +114,7 @@ widget.onLoad = widget.onRefresh = function(){
 <style type="text/css">
 <!--
 .thumb_list {float:left;width:100%;}
-.thumb_list li{float:left;width:133px;padding:5px;height:128px;overflow:hidden;}
+.thumb_list li{float:left;width:133px;padding:5px;height:120px;overflow:hidden;}
 .thumb_list li img{width:120px;height:90px;}
 .wd {
 	padding:2px 0;
