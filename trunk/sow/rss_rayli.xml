@@ -49,7 +49,6 @@ function getcontentXML(xmlobj) {
 	var item = null;
 
 	var items = results.getElementsByTagName("item");
-	alert(items.length);
 
 	_dataArray = new Array();
 
@@ -87,6 +86,7 @@ function showcontent(offset){
 			html+='<li><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(subfix+_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></li>';
 		}
 		html+='</ul>';
+		alert(html);
 		con.setHTML(html);
 	}else{
 		html+='<div class="rich_list">';
