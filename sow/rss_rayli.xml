@@ -49,6 +49,7 @@ function getcontentXML(xmlobj) {
 	var item = null;
 
 	var items = results.getElementsByTagName("item");
+	alert(items.length);
 
 	_dataArray = new Array();
 
