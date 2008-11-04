@@ -35,8 +35,8 @@ function objItem(item){
 	this.title=item.getElementsByTagName("title")[0].firstChild.nodeValue;
 	this.url=item.getElementsByTagName("link")[0].firstChild.nodeValue;
 	if (item.getElementsByTagName("description")){
-		var desc=item.getElementsByTagName("description");
-		for(i=0;i<desc.childNodes.length;i++){
+		var desc=item.getElementsByTagName("description")[0];
+		for(var i=0;i<desc.childNodes.length;i++){
 			this.desc+=desc.childNodes[i].nodeValue
 		}
 		//this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue;
