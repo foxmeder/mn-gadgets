@@ -3,19 +3,19 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
 <head>
-<title>豆瓣</title>
+<title>后现代乐园</title>
 <link rel="icon" type="image/x-icon" href="http://www.mynon.cn/images/favicon.gif" />
 <meta name="author" content="迈弄" />
 <meta name="website" content="http://www.mynon.cn" />
-<meta name="description" content="咱文化人都爱用豆瓣" />
+<meta name="description" content="设计 发现 生活创意" />
 <meta name="version" content="1.2" />
-<meta name="keyword" content="豆瓣,评论" />
-<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_douban.gif" />
-<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_douban.gif" />
+<meta name="keyword" content="生活,创意,设计,发现" />
+<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_911usa.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_911usa.gif" />
 <meta name="debugMode" content="true" />
 <widget:preferences>
-	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="2"/>
-	<preference type="boolean" label="显示细节" name="showtip" defaultValue="true"/>
+	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="7"/>
+	<preference type="boolean" label="显示细节" name="showtip"/>
 </widget:preferences>
 <script type="text/javascript">
 <![CDATA[
@@ -64,7 +64,6 @@ function getcontentXML(xmlobj) {
 
 }
 function showcontent(offset){
-	var subfix="";
 	var pager = new UWA.Controls.Pager({
 		module: widget,
 		limit: widget.getValue("pagesize"),
@@ -83,14 +82,14 @@ function showcontent(offset){
 
 		html+='<ul class="text_list">';
 		for (i=offset;(i<_dataArray.length) && (i<offset+parseInt(widget.getValue("pagesize")));i++){
-			html+='<li><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(subfix+_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></li>';
+			html+='<li><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></li>';
 		}
 		html+='</ul>';
 		con.setHTML(html);
 	}else{
 		html+='<div class="rich_list">';
 		for (i=offset;(i<_dataArray.length) && (i<offset+parseInt(widget.getValue("pagesize")));i++){
-			html+='<div class="item"><h3><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(subfix+_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></h3><div class="description">加载中...</div></div>';
+			html+='<div class="item"><h3><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></h3><div class="description">加载中...</div></div>';
 		}
 		html+='</div>';
 		con.setHTML(html);
@@ -103,16 +102,10 @@ function showcontent(offset){
 	con.addContent(pager.getDom());
 
 }
-function getUrl(){
-	var el=widget.body.getElementsByClassName("rss_sel")[0];
-	var url=el.options[el.selectedIndex].value;
-	UWA.Data.getXml(url,getcontentXML);
-}
 widget.onLoad = widget.onRefresh = function(){
-	var el=widget.body.getElementsByClassName("rss_sel")[0];
-	el.onchange=getUrl;
-	getUrl();
-	var wid=297;
+	var url='http://feed.feedsky.com/xulingyi';
+	UWA.Data.getXml(url,getcontentXML);
+	var wid=298;
 	getWData(wid);
 };
 ]]>
@@ -136,8 +129,7 @@ widget.onLoad = widget.onRefresh = function(){
 </style>
 </head>
 <body>
-<div class="logo_head"><a href="http://www.douban.com/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_douban.gif" alt="豆瓣"/></a>
-<select class="rss_sel"><option value="http://www.douban.com/feed/review/latest">最新评论</option><option value="http://www.douban.com/feed/review/book">最新书评</option><option value="http://www.douban.com/feed/review/movie">最新影论</option><option value="http://www.douban.com/feed/review/music">最新乐论</option></select></div>
+<div class="logo_head"><a href="http://www.911usa.com.cn/Blog/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_911usa.gif" alt="后现代乐园"/></a></div>
 <div class="pig">数据加载中...</div>
 <div class="wd">数据加载中...</div>
 </body>
