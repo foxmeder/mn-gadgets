@@ -60,6 +60,8 @@ function getcontentXML(xmlobj) {
 
 	}
 
+	alert(_dataArray.length);
+
 	showcontent(0);
 
 }
@@ -86,7 +88,6 @@ function showcontent(offset){
 			html+='<li><a href="http://www.mynon.cn/link.php?u='+encodeURIComponent(subfix+_dataArray[i].url)+'&n='+encodeURIComponent(_dataArray[i].title)+'" target="_blank">'+_dataArray[i].title+'</a></li>';
 		}
 		html+='</ul>';
-		alert(html);
 		con.setHTML(html);
 	}else{
 		html+='<div class="rich_list">';
@@ -114,7 +115,7 @@ widget.onLoad = widget.onRefresh = function(){
 	el.onchange=getUrl;
 	getUrl();
 	var wid=300;
-	getWData(wid);
+	//getWData(wid);
 };
 ]]>
 </script>
