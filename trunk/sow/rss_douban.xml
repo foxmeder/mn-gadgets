@@ -64,7 +64,7 @@ function getcontentXML(xmlobj) {
 
 }
 function showcontent(offset){
-	var subfix="http://www.qnwz.cn";
+	var subfix="";
 	var pager = new UWA.Controls.Pager({
 		module: widget,
 		limit: widget.getValue("pagesize"),
