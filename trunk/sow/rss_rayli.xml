@@ -35,7 +35,7 @@ function getWData(wid) {
 function objItem(item){
 	this.title=item.getElementsByTagName("title")[0].firstChild.nodeValue;
 	this.url=item.getElementsByTagName("link")[0].firstChild.nodeValue;
-	if (item.getElementsByTagName("description")[0].firstChild){
+	if (item.getElementsByTagName("description")[0] && item.getElementsByTagName("description")[0].firstChild){
 		this.desc=item.getElementsByTagName("description")[0].firstChild.nodeValue;
 	}else{
 		this.desc='';
