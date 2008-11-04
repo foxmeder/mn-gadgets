@@ -60,8 +60,6 @@ function getcontentXML(xmlobj) {
 
 	}
 
-	alert(_dataArray.length);
-
 	showcontent(0);
 
 }
@@ -115,7 +113,7 @@ widget.onLoad = widget.onRefresh = function(){
 	el.onchange=getUrl;
 	getUrl();
 	var wid=300;
-	//getWData(wid);
+	getWData(wid);
 };
 ]]>
 </script>
