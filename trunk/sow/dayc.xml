@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+<head>
+<title>草莓亞米计日器</title>
+<link rel="icon" type="image/x-icon" href="http://www.mynon.cn/images/favicon.gif" />
+<meta name="author" content="mynon" />
+<meta name="website" content="http://www.mynon.cn" />
+<meta name="description" content="可爱的草莓亞米计日器，输入日期和相关文字说明，即可计算距离现在有多少天。" />
+<meta name="version" content="1.2" />
+<meta name="keyword" content="计日器,有趣,可爱,亞米" />
+<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/dayc.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/dayc.gif" />
+<meta name="debugMode" content="true" />
+<widget:preferences>
+  <preference type="text" name="sth" label="内容" defaultValue="说明文字" />
+  <preference type="text" name="y" label="年份" defaultValue="2008" />
+  <preference type="text" name="m" label="月份" defaultValue="11" />
+  <preference type="text" name="d" label="日期" defaultValue="10" />
+</widget:preferences>
+<script type="text/javascript">
+<![CDATA[
+function showWData(data){
+	var div = UWA.$element(widget.body.getElementsByClassName('wd')[0]);
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.asp?id=m_'+data.w+'&uid='+unescape(data.u)+'" target="_blank">'+unescape(data.t)+'</a>';
+		div.setHTML(htmlCode);
+	}else{
+		div.hide();
+	}
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/files/widgetData.asp?wid='+wid;
+	UWA.Data.getJson(url,showWData);
+}
+widget.onLoad = widget.onRefresh = function() {
+    if (widget.getValue("sth")){
+    var sth = widget.getValue("sth");
+	}else{
+	var sth = "说明文字";
+	}
+	var y=widget.getValue("y")||2008,m=widget.getValue("m")||11,d=widget.getValue("d")||10;
+	var str = '<div class="pig"><embed allowScriptAccess="never" allowNetworking="internal" wmode="transparent" src="http://blog.spforum.net/UploadFiles/2007-10/1011294880.swf?v_wd='+encodeURIComponent(txt)+'&v_t='+y+'/'+m+'/'+d+'" width="160" height="150" quality="high"></embed><div class="wd">数据加载中...</div></div>';
+    widget.setBody(str);
+	var wid=304;
+	getWData(wid);
+}
+]]>
+</script>
+<style type="text/css">
+<!--
+.pig{width:160px;margin:0 auto;}
+.wd {
+	padding:2px 0;
+}
+-->
+</style>
+</head>
+<body>
+正在加载....
+</body>
+</html>
