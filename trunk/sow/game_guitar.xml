@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+<head>
+<title>吉他英雄</title>
+<link rel="icon" type="image/x-icon" href="http://www.mynon.cn/iamges/favicon.gif" />
+<meta name="author" content="mynon" />
+<meta name="website" content="http://www.mynon.cn" />
+<meta name="description" content="吉他英雄flash版" />
+<meta name="version" content="1.2" />
+<meta name="keyword" content="吉他英雄,游戏" />
+<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/game_guitar.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/game_guitar.gif" />
+<meta name="debugMode" content="true" />
+<script type="text/javascript">
+<![CDATA[
+function showWData(data){
+	var div = UWA.$element(widget.body.getElementsByClassName('wd')[0]);
+	if(data.u && data.t){
+		var htmlCode = '<img style="margin-bottom:-3px;" src="'+unescape(data.i)+'" /> <a href="http://www.mynon.cn/files/bk_click.php?id=m_'+data.w+'&uid='+unescape(data.u)+'" target="_blank">'+unescape(data.t)+'</a>';
+		div.setHTML(htmlCode);
+	}else{
+		div.hide();
+	}
+}
+function getWData(wid) {
+	var url='http://www.mynon.cn/widget/data/interlink/'+wid+'/json';
+	UWA.Data.getJson(url,showWData);
+}
+widget.onLoad = widget.onRefresh = function() {
+	var rect = widget.body.getDimensions();
+	var height = rect.width * 0.56;
+	var str = '<div class="fsc"><a target="_blank" href="http://www.mynon.cn/widget/data/game/303/page">使用全屏模式</a></div><embed allowScriptAccess="never" allowNetworking="internal" src="http://www.diggygames.com/swf/sc-guitar-maniac-dx--1576.swf" wmode="opaque" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100%" height="' + height + '"></embed><div class="wd">数据加载中...</div>';
+	widget.setBody(str);
+	var wid=303;
+	getWData(wid);
+}
+]]>
+</script>
+<style type="text/css">
+<!--
+.fsc {
+	text-align:center;
+}
+.wd {
+	padding:2px 0;
+}
+-->
+</style>
+</head>
+<body>
+正在加载游戏...
+</body>
+</html>
