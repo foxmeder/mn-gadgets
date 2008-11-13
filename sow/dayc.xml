@@ -40,7 +40,7 @@ widget.onLoad = widget.onRefresh = function() {
 	var sth = "说明文字";
 	}
 	var y=widget.getValue("y")||2008,m=widget.getValue("m")||11,d=widget.getValue("d")||10;
-	var str = '<div class="pig"><embed allowScriptAccess="never" allowNetworking="internal" wmode="transparent" src="http://blog.spforum.net/UploadFiles/2007-10/1011294880.swf?v_wd='+encodeURIComponent(txt)+'&v_t='+y+'/'+m+'/'+d+'" width="160" height="150" quality="high"></embed><div class="wd">数据加载中...</div></div>';
+	var str = '<div class="pig"><embed allowScriptAccess="never" allowNetworking="internal" wmode="transparent" src="http://blog.spforum.net/UploadFiles/2007-10/1011294880.swf?v_wd='+encodeURIComponent(sth)+'&v_t='+y+'/'+m+'/'+d+'" width="160" height="150" quality="high"></embed><div class="wd">数据加载中...</div></div>';
     widget.setBody(str);
 	var wid=304;
 	getWData(wid);
