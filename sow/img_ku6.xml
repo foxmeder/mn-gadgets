@@ -34,7 +34,7 @@ function objItem(item){
 	a = /src=[\"\']?[^\"\'\s>]+[\"\']?/ig;
 	this.title=item.getElementsByTagName("title")[0].firstChild.nodeValue;
 	this.url=item.getElementsByTagName("link")[0].firstChild.nodeValue;
-	if (item.getElementsByTagName("description")){
+	if (item.getElementsByTagName("description")[0]){
 		var desc=item.getElementsByTagName("description")[0];
 		for(var i=0;i<desc.childNodes.length;i++){
 			this.desc+=desc.childNodes[i].nodeValue
