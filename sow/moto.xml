@@ -31,7 +31,7 @@ function getWData(wid) {
 widget.onLoad = widget.onRefresh = function() {
 	var rect = widget.body.getDimensions();
 	var height = rect.width * 0.59;
-	var str = '<div class="fsc"><a target="_blank" href="http://www.mynon.cn/widget/data/game/303/page">使用全屏模式</a></div><iframe src="http://songid.motorola.com.cn/" width="100%" height="'+height+'"></iframe><div class="wd">数据加载中...</div>';
+	var str = '<div class="fsc"><a target="_blank" href="http://www.mynon.cn/widget/data/game/303/page">使用全屏模式</a></div><iframe src="http://www.mynon.cn/lt/moto/moto.htm" width="100%" height="'+height+'"></iframe><div class="wd">数据加载中...</div>';
 	widget.setBody(str);
 	var wid=303;
 	//getWData(wid);
