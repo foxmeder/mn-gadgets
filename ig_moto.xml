@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-<ModulePrefs title="挑战杰伦音乐雷达" description="猜对播放的音乐名称，即可让周杰伦按你的要求呈上独家表演。" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="260" scaling="false">
+<ModulePrefs title="挑战杰伦音乐雷达" description="猜对播放的音乐名称，即可让周杰伦按你的要求呈上独家表演。" author="迈弄" author_affiliation="迈弄" author_link="http://www.mynon.cn" height="290" scaling="false">
 	<Require feature="dynamic-height"/>
 </ModulePrefs>
 <Content type="html">
