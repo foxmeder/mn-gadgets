@@ -34,7 +34,7 @@ widget.onLoad = widget.onRefresh = function() {
 	var str = '<div class="fsc"><a target="_blank" href="http://www.mynon.cn/widget/data/game/312/page">使用全屏模式</a></div><iframe marginwidth="0" marginheight="0" scrolling="no" framespacing="0" vspace="0" hspace="0" frameborder="0" src="http://songid.motorola.com.cn/" width="100%" height="'+height+'"></iframe><div class="wd">数据加载中...</div>';
 	widget.setBody(str);
 	var wid=312;
-	//getWData(wid);
+	getWData(wid);
 }
 ]]>
 </script>
