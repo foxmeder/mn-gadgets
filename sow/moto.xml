@@ -3,15 +3,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
 <head>
-<title>吉他英雄</title>
+<title>挑战杰伦音乐雷达</title>
 <link rel="icon" type="image/x-icon" href="http://www.mynon.cn/images/favicon.gif" />
-<meta name="author" content="mynon" />
+<meta name="author" content="迈弄" />
 <meta name="website" content="http://www.mynon.cn" />
-<meta name="description" content="吉他英雄flash版" />
+<meta name="description" content="猜对播放的音乐名称，即可让周杰伦按你的要求呈上独家表演。" />
 <meta name="version" content="1.2" />
-<meta name="keyword" content="吉他英雄,游戏" />
-<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/game_guitar.gif" />
-<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/game_guitar.gif" />
+<meta name="keyword" content="周杰伦,音乐雷达,摩托罗拉" />
+<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/moto.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/moto.gif" />
 <meta name="debugMode" content="true" />
 <script type="text/javascript">
 <![CDATA[
@@ -31,9 +31,9 @@ function getWData(wid) {
 widget.onLoad = widget.onRefresh = function() {
 	var rect = widget.body.getDimensions();
 	var height = rect.width * 0.59;
-	var str = '<div class="fsc"><a target="_blank" href="http://www.mynon.cn/widget/data/game/303/page">使用全屏模式</a></div><iframe marginwidth="0" marginheight="0" scrolling="no" framespacing="0" vspace="0" hspace="0" frameborder="0" src="http://songid.motorola.com.cn/" width="100%" height="'+height+'"></iframe><div class="wd">数据加载中...</div>';
+	var str = '<div class="fsc"><a target="_blank" href="http://www.mynon.cn/widget/data/game/312/page">使用全屏模式</a></div><iframe marginwidth="0" marginheight="0" scrolling="no" framespacing="0" vspace="0" hspace="0" frameborder="0" src="http://songid.motorola.com.cn/" width="100%" height="'+height+'"></iframe><div class="wd">数据加载中...</div>';
 	widget.setBody(str);
-	var wid=303;
+	var wid=312;
 	//getWData(wid);
 }
 ]]>
@@ -50,6 +50,6 @@ widget.onLoad = widget.onRefresh = function() {
 </style>
 </head>
 <body>
-正在加载游戏...
+正在加载内容...
 </body>
 </html>
