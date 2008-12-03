@@ -2,15 +2,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
 <head>
-<title>Movie Castle</title>
+<title>鸸鹋宠物后院儿</title>
 <link rel="icon" type="image/x-icon" href="http://www.mynon.cn/images/favicon.gif" />
 <meta name="author" content="迈弄" />
 <meta name="website" content="http://www.mynon.cn" />
-<meta name="description" content="笑话大全" />
+<meta name="description" content="致力于创建和谐宠物社会" />
 <meta name="version" content="1.2" />
-<meta name="keyword" content="笑话,有趣" />
-<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_moviecastle.gif" />
-<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_moviecastle.gif" />
+<meta name="keyword" content="宠物,有趣" />
+<meta name="screenshot" content="http://www.mynon.cn/images/bk/pre_img/rss_ermiao.gif" />
+<meta name="thumbnail" content="http://www.mynon.cn/images/ow/thumb/rss_ermiao.gif" />
 <meta name="debugMode" content="true" />
 <widget:preferences>
 	<preference type="range" label="每页条数" name="pagesize" min="1" max="16" step="1" defaultValue="7"/>
@@ -102,9 +102,9 @@ function showcontent(offset){
 
 }
 widget.onLoad = widget.onRefresh = function(){
-	var url='http://feed.feedsky.com/yacca';
+	var url='http://feed.feedsky.com/ermiao';
 	UWA.Data.getXml(url,getcontentXML);
-	var wid=308;
+	var wid=310;
 	getWData(wid);
 };
 ]]>
@@ -128,7 +128,7 @@ widget.onLoad = widget.onRefresh = function(){
 </style>
 </head>
 <body>
-<div class="logo_head"><a href="http://www.eemir3.com/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_moviecastle.gif" alt="Movie Castle"/></a></div>
+<div class="logo_head"><a href="http://www.ermiao.com/" target="_blank"><img src="http://www.mynon.cn/images/bk/logo/logo_ermiao.gif" alt="鸸鹋宠物后院儿"/></a></div>
 <div class="pig">数据加载中...</div>
 <div class="wd">数据加载中...</div>
 </body>
